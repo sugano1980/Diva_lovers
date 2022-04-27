@@ -1,0 +1,34 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "garapon.moc3",
+		"Textures": [
+			"garapon.1024/texture_00.png"
+		],
+		"DisplayInfo": "garapon.cdi3.json",
+		"Motions": {
+				"Ikaei": [
+				{
+					"File": "motions/Idle.motion3.json"
+							}],
+
+			"Scene1": [
+				{
+					"File": "motions/Scene1.motion3.json"
+							}]
+		}
+
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

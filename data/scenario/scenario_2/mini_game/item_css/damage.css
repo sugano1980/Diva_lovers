@@ -1,0 +1,4 @@
+.damage{
+    color: #B22222;
+    text-shadow: 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800, 1px 1px 1px #ff9800, -1px 1px 1px #ff9800, 1px -1px 1px #ff9800, -1px -1px 1px #ff9800;
+}

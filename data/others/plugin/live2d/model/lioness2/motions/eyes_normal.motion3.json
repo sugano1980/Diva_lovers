@@ -1,0 +1,71 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 1.6,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 5,
+		"TotalSegmentCount": 5,
+		"TotalPointCount": 10,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_FORM",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_BALL_X",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_BALL_Y",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_BALL_FORM",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_BREATH",
+			"Segments": [
+				0,
+				1,
+				0,
+				1.6,
+				1
+			]
+		}
+	]
+}

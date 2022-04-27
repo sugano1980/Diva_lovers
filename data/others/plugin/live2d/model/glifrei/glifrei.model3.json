@@ -1,0 +1,196 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "glifrei.moc3",
+		"Textures": [
+			"glifrei.4096/texture_00.png"
+		],
+		"Physics": "glifrei.physics3.json",
+		"DisplayInfo": "glifrei.cdi3.json",
+		"Motions": {
+			"Idle": [{
+					"File": "motions/Idle.motion3.json"
+				}],
+				"Body_right_z":[{
+					"File": "motions/body_right_z.motion3.json"
+				}],
+				"Body_normal_war":[{
+					"File": "motions/body_normal_war.motion3.json"
+				}],
+
+				"Exp_mehuse_muzukasii":[{
+					"File": "motions/Exp_mehuse_muzukasii.motion3.json"
+				}],
+				"Eyes_under":[{
+					"File": "motions/eyes_under_y.motion3.json"
+				}],
+				"Eyes_normal":[{
+					"File": "motions/eyes_normal.motion3.json"
+				}],
+
+				"Body_above_y":[{
+					"File": "motions/body_above_y.motion3.json"
+				}],
+				"Exp_smile":[{
+					"File": "motions/Exp_smile.motion3.json"
+				}],
+				"Exp_normal_warai":[{
+					"File": "motions/Exp_normal_warai.motion3.json"
+				}],
+				"Head_left_x":[{
+					"File": "motions/head_left_x.motion3.json"
+				}],
+				"Eyes_above":[{
+					"File": "motions/eyes_above_y.motion3.json"
+				}],
+				"Exp_sinpai":[{
+					"File": "motions/Exp_sinpai.motion3.json"
+				}],
+				"Arms_atamanite":[{
+					"File": "motions/arms_atamanite.motion3.json"
+				}],
+				"Body_under_y":[{
+					"File": "motions/body_under_y.motion3.json"
+				}],
+				"Eyes_left_under":[{
+					"File": "motions/eyes_left_under.motion3.json"
+				}],
+				"Body_left_x":[{
+					"File": "motions/body_left_x.motion3.json"
+				}],
+				"Arms_normal":[{
+					"File": "motions/arms_normal.motion3.json"
+				}],
+				"Exp_komari_warai":[{
+					"File": "motions/Exp_komari_warai.motion3.json"
+				}],
+				"Exp_komari":[{
+					"File": "motions/Exp_komari.motion3.json"
+				}],
+
+				"Head_right_x":[{
+					"File": "motions/head_right_x.motion3.json"
+				}],
+				"Eyes_right_above":[{
+					"File": "motions/eyes_right_above.motion3.json"
+				}],
+				"Exp_bisyo":[{
+					"File": "motions/Exp_bisyo.motion3.json"
+				}],
+				"Arms_kamae":[{
+					"File": "motions/arms_kamae.motion3.json"
+				}],
+				"Arms_kamae_2":[{
+					"File": "motions/arms_kamae_2.motion3.json"
+				}],
+
+				"Exp_mousiwakenai":[{
+					"File": "motions/Exp_mousiwakenai.motion3.json"
+				}],
+				"Exp_metoji_warai":[{
+					"File": "motions/Exp_metoji_warai.motion3.json"
+				}],
+				"Exp_mehuse_warai":[{
+					"File": "motions/Exp_mehuse_warai.motion3.json"
+				}],
+				"Head_above_y":[{
+					"File": "motions/head_above_y.motion3.json"
+				}],
+				"Body_left_z":[{
+					"File": "motions/body_left_z.motion3.json"
+				}],
+				"Eyes_left_above":[{
+					"File": "motions/eyes_left_above.motion3.json"
+				}],
+				"Head_right_z":[{
+					"File": "motions/head_right_z.motion3.json"
+				}],
+				"Exp_mehuse":[{
+					"File": "motions/Exp_mehuse.motion3.json"
+				}],
+				"Exp_mihiraki":[{
+					"File": "motions/Exp_mihiraki.motion3.json"
+				}],
+				"Eyes_left":[{
+					"File": "motions/eyes_left_x.motion3.json"
+				}],
+				"Exp_normal":[{
+					"File": "motions/Exp_normal.motion3.json"
+				}],
+				"Head_under_y":[{
+					"File": "motions/head_under_y.motion3.json"
+				}],
+				"Arms_right_udehiroge":[{
+					"File": "motions/arms_right_udehiroge.motion3.json"
+				}],
+				"Arms_hoote":[{
+					"File": "motions/arms_hoote.motion3.json"
+				}],
+				"Arms_left_udehiroge":[{
+					"File": "motions/arms_left_udehiroge.motion3.json"
+				}],
+				"Idle_mehuse":[{
+					"File": "motions/Idle_mehuse.motion3.json"
+				}],
+				"Body_normal":[{
+					"File": "motions/body_normal.motion3.json"
+				}],
+				"Body_normal_war":[{
+					"File": "motions/body_normal_war.motion3.json"
+				}],
+
+				"Exp_yokome_warai":[{
+					"File": "motions/Exp_yokome_warai.motion3.json"
+				}],
+				"Eyes_right_under":[{
+					"File": "motions/eyes_right_under.motion3.json"
+				}],
+				"Head_left_z":[{
+					"File": "motions/head_left_z.motion3.json"
+				}],
+				"Eyes_right":[{
+					"File": "motions/eyes_right_x.motion3.json"
+				}],
+				"Exp_ketui":[{
+					"File": "motions/Exp_ketui.motion3.json"
+				}],
+				"Exp_komari_sekimen":[{
+					"File": "motions/Exp_komari_sekimen.motion3.json"
+				}],
+				"Exp_metoji":[{
+					"File": "motions/Exp_metoji.motion3.json"
+				}],
+				"Exp_tere":[{
+					"File": "motions/Exp_tere.motion3.json"
+				}],
+				"Idle_mode_2":[{
+					"File": "motions/Idle_mode_2.motion3.json"
+				}],
+				"Idle_mode_3":[{
+					"File": "motions/Idle_mode_3.motion3.json"
+				}],
+				"Head_normal":[{
+					"File": "motions/head_normal.motion3.json"
+				}],
+				"Body_right_x":[{
+					"File": "motions/body_right_x.motion3.json"
+				}]			
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"PARAM_MOUTH_FORM",
+				"PARAM_MOUTH_OPEN_Y"			
+			]
+		}
+	],
+	"HitAreas": []
+}

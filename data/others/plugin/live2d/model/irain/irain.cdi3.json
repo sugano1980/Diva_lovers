@@ -1,0 +1,421 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "PARAM_ANGLE_X",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "PARAM_ANGLE_Y",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "パラメータ30"
+		},
+		{
+			"Id": "PARAM_ANGLE_Z",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "PARAM_EYE_L_OPEN",
+			"GroupId": "",
+			"Name": "左目　開閉"
+		},
+		{
+			"Id": "PARAM_EYE_L_SMILE",
+			"GroupId": "",
+			"Name": "左目　笑顔"
+		},
+		{
+			"Id": "PARAM_EYE_R_OPEN",
+			"GroupId": "",
+			"Name": "右目　開閉"
+		},
+		{
+			"Id": "PARAM_EYE_R_SMILE",
+			"GroupId": "",
+			"Name": "右目　笑顔"
+		},
+		{
+			"Id": "PARAM_EYE_BALL_X",
+			"GroupId": "",
+			"Name": "目玉 X"
+		},
+		{
+			"Id": "PARAM_EYE_BALL_Y",
+			"GroupId": "",
+			"Name": "目玉 Y"
+		},
+		{
+			"Id": "PARAM_BROW_L_Y",
+			"GroupId": "",
+			"Name": "左眉　上下"
+		},
+		{
+			"Id": "PARAM_BROW_R_Y",
+			"GroupId": "",
+			"Name": "右眉　上下"
+		},
+		{
+			"Id": "PARAM_BROW_L_X",
+			"GroupId": "",
+			"Name": "左眉　左右"
+		},
+		{
+			"Id": "PARAM_BROW_R_X",
+			"GroupId": "",
+			"Name": "右眉　左右"
+		},
+		{
+			"Id": "PARAM_BROW_L_ANGLE",
+			"GroupId": "",
+			"Name": "左眉　角度"
+		},
+		{
+			"Id": "PARAM_BROW_R_ANGLE",
+			"GroupId": "",
+			"Name": "右眉　角度"
+		},
+		{
+			"Id": "PARAM_BROW_L_FORM",
+			"GroupId": "",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "PARAM_BROW_R_FORM",
+			"GroupId": "",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "PARAM_MOUTH_FORM",
+			"GroupId": "",
+			"Name": "口　変形"
+		},
+		{
+			"Id": "PARAM_MOUTH_OPEN_Y",
+			"GroupId": "",
+			"Name": "口　開閉"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_X",
+			"GroupId": "",
+			"Name": "体の回転　X"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_Y",
+			"GroupId": "",
+			"Name": "体の回転　Y"
+		},
+		{
+			"Id": "PARAM_BODY_ANGLE_Z",
+			"GroupId": "",
+			"Name": "体の回転　Z"
+		},
+		{
+			"Id": "PARAM_BREATH",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "PARAM_HAIR_FRONT",
+			"GroupId": "",
+			"Name": "髪揺れ　前"
+		},
+		{
+			"Id": "PARAM_HAIR_BACK",
+			"GroupId": "",
+			"Name": "髪揺れ　後"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "右足動き"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "左足動き"
+		},
+		{
+			"Id": "PARAM_ARM_L_01",
+			"GroupId": "",
+			"Name": "左上腕"
+		},
+		{
+			"Id": "PARAM_ARM_R_01",
+			"GroupId": "",
+			"Name": "右上腕"
+		},
+		{
+			"Id": "Backj_hair_swing2",
+			"GroupId": "",
+			"Name": "後ろ髪の揺れ２"
+		},
+		{
+			"Id": "mant_move",
+			"GroupId": "",
+			"Name": "マント"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "本読む"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "足曲げる"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "稽古"
+		},
+		{
+			"Id": "Param26",
+			"GroupId": "",
+			"Name": "お辞儀"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "足構え"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "戦闘構え"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "防御"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "ダメージ"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "攻撃１"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "攻撃２"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "技かまえ"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "技２"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "",
+			"Name": "ベルト変更"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "",
+			"Name": "髪の毛なし"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "ウェーブツイン"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "毒"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "腕なし毒"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "麻痺"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "麻痺目なし"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "ジャンプ"
+		},
+		{
+			"Id": "Param23",
+			"GroupId": "",
+			"Name": "ワンピース"
+		},
+		{
+			"Id": "Param24",
+			"GroupId": "",
+			"Name": "服切り替え"
+		},
+		{
+			"Id": "Param25",
+			"GroupId": "",
+			"Name": "倒れる"
+		},
+		{
+			"Id": "Param27",
+			"GroupId": "",
+			"Name": "毒目閉じ"
+		},
+		{
+			"Id": "Param28",
+			"GroupId": "",
+			"Name": "毒攻撃"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part75",
+			"Name": "イレ追加 (1).psd"
+		},
+		{
+			"Id": "Part16",
+			"Name": "イレ体ミニキャラ 2追加 (2).psd"
+		},
+		{
+			"Id": "PARTS_01_BODY",
+			"Name": "体"
+		},
+		{
+			"Id": "PARTS_01_ARM",
+			"Name": "腕"
+		},
+		{
+			"Id": "PARTS_01_NECK",
+			"Name": "首"
+		},
+		{
+			"Id": "PARTS_01_HAIR_BACK_001",
+			"Name": "後ろ髪"
+		},
+		{
+			"Id": "PARTS_01_HAIR_SIDE_001",
+			"Name": "横髪"
+		},
+		{
+			"Id": "PARTS_01_HAIR_FRONT_001",
+			"Name": "前髪"
+		},
+		{
+			"Id": "PARTS_01_NOSE_001",
+			"Name": "鼻"
+		},
+		{
+			"Id": "PARTS_01_MOUTH_001",
+			"Name": "口"
+		},
+		{
+			"Id": "PARTS_01_BROW_001",
+			"Name": "まゆ毛"
+		},
+		{
+			"Id": "PARTS_01_EYE_BALL_001",
+			"Name": "目玉"
+		},
+		{
+			"Id": "PARTS_01_EYE_001",
+			"Name": "目"
+		},
+		{
+			"Id": "PARTS_01_FACE_001",
+			"Name": "顔"
+		},
+		{
+			"Id": "PARTS_01_CORE",
+			"Name": "コア"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ 下絵 ]"
+		},
+		{
+			"Id": "Part48",
+			"Name": "毒 のコピー"
+		},
+		{
+			"Id": "Part",
+			"Name": "技2"
+		},
+		{
+			"Id": "Part2",
+			"Name": "技構え"
+		},
+		{
+			"Id": "Part3",
+			"Name": "攻撃2"
+		},
+		{
+			"Id": "Part4",
+			"Name": "攻撃"
+		},
+		{
+			"Id": "Part5",
+			"Name": "麻痺"
+		},
+		{
+			"Id": "Part6",
+			"Name": "毒"
+		},
+		{
+			"Id": "Part7",
+			"Name": "構え"
+		},
+		{
+			"Id": "Part8",
+			"Name": "ダメージ"
+		},
+		{
+			"Id": "Part9",
+			"Name": "攻撃構え"
+		},
+		{
+			"Id": "Part10",
+			"Name": "フォルダー 1"
+		},
+		{
+			"Id": "Part11",
+			"Name": "頭部"
+		},
+		{
+			"Id": "Part12",
+			"Name": "顔"
+		},
+		{
+			"Id": "Part13",
+			"Name": "左目"
+		},
+		{
+			"Id": "Part15",
+			"Name": "右目"
+		},
+		{
+			"Id": "Part14",
+			"Name": "左目"
+		}
+	]
+}

@@ -1,0 +1,117 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "irain.moc3",
+		"Textures": [
+			"irain.1024/texture_00.png",
+			"irain.1024/texture_01.png"
+			],
+		"Physics": "irain.physics3.json",
+		"DisplayInfo": "irain.cdi3.json",
+		"Motions": {
+			"Idle_tuyoki": [
+				{
+					"File": "motions/Scene1.motion3.json"
+				}],
+				"Pose_yasumu":[{
+					"File": "motions/pose_yasumu.motion3.json"
+				}],
+				"Normal":[{
+					"File": "motions/normal.motion3.json"
+				}],
+				"Pose_kadai":[{
+					"File": "motions/pose_kadai.motion3.json"
+				}],
+				"Battle_attack1":[{
+					"File": "motions/battle_attack1.motion3.json"
+				}],
+				"Battle_attack1_poison":[{
+					"File": "motions/battle_attack1_poison.motion3.json"
+				}],
+
+
+				"Battle_item":[{
+					"File": "motions/battle_item.motion3.json"
+				}],
+				"Battle_skill_1":[{
+					"File": "motions/battle_skill_1.motion3.json"
+				}],
+				"Battle_poison":[{
+					"File": "motions/battle_poison.motion3.json"
+				}],
+				"Battle_poison_metoji":[{
+					"File": "motions/battle_poison_metoji.motion3.json"
+				}],
+				"Battle_attack2_poison":[{
+					"File": "motions/battle_attack2_poison.motion3.json"
+				}],
+				"Battle_attack2":[{
+					"File": "motions/battle_attack2.motion3.json"
+				}],
+
+				"Battle_mahi":[{
+					"File": "motions/battle_mahi.motion3.json"
+				}],
+				"Battle_kamae":[{
+					"File": "motions/battle_kamae.motion3.json"
+				}],
+				"Irain.motion3":[{
+					"File": "motions/irain.motion3.json"
+				}],
+				"Battle_nemuri":[{
+					"File": "motions/battle_nemuri.motion3.json"
+				}],
+				"Battle_damage":[{
+					"File": "motions/battle_damage.motion3.json"
+				}],
+				"Sleep":[{
+					"File": "motions/sleep.motion3.json"
+				}],
+				"Battle_guard":[{
+					"File": "motions/battle_guard.motion3.json"
+				}],
+				"Battle_kamae_hinsi":[{
+					"File": "motions/battle_kamae_hinsi.motion3.json"
+				}],
+                "Battle_victory":[{
+					"File": "motions/battle_victory.motion3.json"
+				}],
+				 "Jump":[{
+					"File": "motions/jump.motion3.json"
+				}],
+				"Pose_keiko":[{
+					"File": "motions/pose_keiko.motion3.json"
+				}],
+				"Normal_wave":[{
+					"File": "motions/normal_wave.motion3.json"
+				}],
+				"Normal_one_piece":[{
+					"File": "motions/normal_one_piece.motion3.json"
+				}],
+				"Lose":[{
+					"File": "motions/lose.motion3.json"
+				}],
+				"Ojigi":[{
+					"File": "motions/ojigi.motion3.json"
+				}],
+
+
+
+
+			
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}

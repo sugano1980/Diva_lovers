@@ -1,0 +1,328 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "ahov.moc3",
+		"Textures": [
+			"ahov.4096/texture_00.png"
+		],
+		"Physics": "ahov.physics3.json",
+		"DisplayInfo": "ahov.cdi3.json",
+		"Motions": {
+			
+			"Face_jichou": [{
+				"File": "motion/face_jichou.motion3.json"
+				}],
+				"Face_normal": [{
+					"File": "motion/face_normal.motion3.json"
+				}],
+				"Face_normal_majime": [{
+					"File": "motion/face_normal_majime.motion3.json"
+				}],
+				"Face_naki_warai": [{
+					"File": "motion/face_naki_warai.motion3.json"
+				}],
+				"Face_gantobasi": [{
+					"File": "motion/face_gantobasi.motion3.json"
+				}],
+				"Face_ikari": [{
+					"File": "motion/face_ikari.motion3.json"
+				}],
+				"Face_mihiraki": [{
+					"File": "motion/face_mihiraki.motion3.json"
+				}],
+				"Face_mihiraki_n": [{
+					"File": "motion/face_mihiraki_n.motion3.json"
+				}],
+					"Face_mehuse": [{
+					"File": "motion/face_mehuse.motion3.json"
+				}],
+				"Face_metoji": [{
+					"File": "motion/face_metoji.motion3.json"
+				}],
+				"Face_kunou": [{
+					"File": "motion/face_kunou.motion3.json"
+				}],
+				"Face_kunou_2": [{
+					"File": "motion/face_kunou_2.motion3.json"
+				}],
+			    "Face_kunou_metoji": [{
+					"File": "motion/face_kunou_metoji.motion3.json"
+				}],
+				"Face_yokome_aseri": [{
+					"File": "motion/face_yokome_aseri.motion3.json"
+				}],
+				"Face_akireru": [{
+					"File": "motion/face_akireru.motion3.json"
+				}],
+				"Face_odoroki": [{
+					"File": "motion/face_odoroki.motion3.json"
+				}],
+				"Face_tomadoi": [{
+					"File": "motion/face_tomadoi.motion3.json"
+				}],
+				"Face_komari_warai": [{
+					"File": "motion/face_komari_warai.motion3.json"
+				}],
+				"Face_yokome_ase": [{
+					"File": "motion/face_yokome_ase.motion3.json"
+				}],
+				"Face_aseri": [{
+					"File": "motion/face_aseri.motion3.json"
+				}],
+				"Face_gantobasi_warai": [{
+					"File": "motion/face_gantobasi_warai.motion3.json"
+				}],
+				"Face_bisyou_metoji_warai": [{
+					"File": "motion/face_bisyou_metoji_warai.motion3.json"
+				}],
+				"Face_yokome_warai": [{
+					"File": "motion/face_yokome_warai.motion3.json"
+				}],
+				"Face_metoji_warai": [{
+					"File": "motion/face_metoji_warai.motion3.json"
+				}],
+				"Face_mehuse_warai": [{
+					"File": "motion/face_mehuse_warai.motion3.json"
+				}],
+				"Face_komari": [{
+					"File": "motion/face_komari.motion3.json"
+				}],
+					"Face_yokome_majime": [{
+					"File": "motion/face_yokome_majime.motion3.json"
+				}],
+				"Face_hutuu_bisyou": [{
+					"File": "motion/face_hutuu_bisyou.motion3.json"
+				}],
+				"Face_hutuu_warai": [{
+					"File": "motion/face_hutuu_warai.motion3.json"
+				}],
+				"Face_smile_ase": [{
+					"File": "motion/face_smile_ase.motion3.json"
+				}],
+				"Face_bisyou_youen": [{
+					"File": "motion/face_bisyou_youen.motion3.json"
+				}],
+				"Face_yareyare": [{
+					"File": "motion/face_yareyare.motion3.json"
+				}],
+				
+				"Arms_right_x_open": [{
+					"File": "motion/arms_right_x_open.motion3.json"
+				}],
+					"Arms_agonite": [{
+					"File": "motion/arms_agonite.motion3.json"
+				}],
+					"Arms_left_x_close": [{
+					"File": "motion/arms_left_x_close.motion3.json"
+				}],
+				    "Arms_normal": [{
+					"File": "motion/arms_normal.motion3.json"
+				}],
+				   "Arms_normal_move": [{
+					"File": "motion/arms_normal_move.motion3.json"
+				}],
+
+					"Arms_right_setumei": [{
+					"File": "motion/arms_right_setumei.motion3.json"
+				}],
+				    "Arms_right_setumei_modosu": [{
+					"File": "motion/arms_right_setumei_modosu.motion3.json"
+				}],
+				    "Arms_kamae": [{
+					"File": "motion/arms_kamae.motion3.json"
+				}],
+				    "Arms_kataageru": [{
+					"File": "motion/arms_kataageru.motion3.json"
+				}],
+					"Arms_kurusimu_modosu": [{
+					"File": "motion/arms_kurusimu_modosu.motion3.json"
+				}],
+					"Arms_katamodosu": [{
+					"File": "motion/arms_katamodosu.motion3.json"
+				}],
+					"Arms_left_setumei": [{
+					"File": "motion/arms_left_setumei.motion3.json"
+				}],
+					"Arms_right_x_close": [{
+					"File": "motion/arms_right_x_close.motion3.json"
+				}],
+				    "Arms_udekumi": [{
+					"File": "motion/arms_udekumi.motion3.json"
+				}],
+					"Arms_left_x_open": [{
+					"File": "motion/arms_left_x_open.motion3.json"
+				}],
+					"Arms_kurusimu": [{
+					"File": "motion/arms_kurusimu.motion3.json"
+				}],
+					"Arms_temae": [{
+					"File": "motion/arms_temae.motion3.json"
+				}],
+				   "Body_right_z": [{
+					"File": "motion/body_right_z.motion3.json"
+				}],
+				  "Body_above_y": [{
+					"File": "motion/body_above_y.motion3.json"
+				}],
+				 "Body_left_x": [{
+					"File": "motion/body_left_x.motion3.json"
+				}],
+				"Body_kataageru": [{
+					"File": "motion/body_kataageru.motion3.json"
+				}],
+				"Body_left_z": [{
+					"File": "motion/body_left_z.motion3.json"
+				}],
+				"Body_right_x": [{
+					"File": "motion/body_right_x.motion3.json"
+				}],
+				"Body_normal": [{
+					"File": "motion/body_normal.motion3.json"
+				}],
+				"Body_under_y": [{
+					"File": "motion/body_under_y.motion3.json"
+				}],
+				"Body_monshou": [{
+					"File": "motion/body_monshou.motion3.json"
+				}],
+				"Body_monshou_re": [{
+					"File": "motion/body_monshou_re.motion3.json"
+				}],
+				"Body_toumei": [{
+					"File": "motion/body_toumei.motion3.json"
+				}],
+
+				"Eyes_left": [{
+					"File": "motion/eyes_left.motion3.json"
+				}],
+				"Eyes_right_close": [{
+					"File": "motion/eyes_right_close.motion3.json"
+				}],
+				"Eyes_above": [{
+					"File": "motion/eyes_above.motion3.json"
+				}],
+				"Eyes_above_left": [{
+					"File": "motion/eyes_above_left.motion3.json"
+				}],
+				"Eyes_left_close": [{
+					"File": "motion/eyes_left_close.motion3.json"
+				}],
+			   "Eyes_above_right": [{
+					"File": "motion/eyes_above_right.motion3.json"
+				}],
+			   "Eyes_under_right": [{
+					"File": "motion/eyes_under_right.motion3.json"
+				}],
+			  "Eyes_right": [{
+					"File": "motion/eyes_right.motion3.json"
+				}],
+			  "Eyes_under": [{
+					"File": "motion/eyes_under.motion3.json"
+				}],
+			 "Eyes_normal": [{
+					"File": "motion/eyes_normal.motion3.json"
+				}],
+			"Eyes_mihiraki": [{
+					"File": "motion/eyes_mihiraki.motion3.json"
+				}],
+			"Eyes_agureasu": [{
+					"File": "motion/eyes_agureasu.motion3.json"
+				}],
+			"Eyes_agureasu_re": [{
+					"File": "motion/eyes_agureasu_re.motion3.json"
+				}],
+
+
+			"Head_above_y": [{
+			"File": "motion/head_above_y.motion3.json"
+				}],
+			 "Head_right_z": [{
+			"File": "motion/head_right_z.motion3.json"
+				}],
+			 "Head_under_y": [{
+					"File": "motion/head_under_y.motion3.json"
+				}],
+			 "Head_left_z": [{
+					"File": "motion/head_left_z.motion3.json"
+				}],
+			 "Head_left_x": [{
+					"File": "motion/head_left_x.motion3.json"
+				}],
+			 "Head_right_x": [{
+					"File": "motion/head_right_x.motion3.json"
+				}],
+			 "Head_normal": [{
+					"File": "motion/head_normal.motion3.json"
+				}],
+			"Idle_no_coat": [{
+					"File": "motion/Idle_no_coat.motion3.json"
+				}],
+			"Idle": [{
+					"File": "motion/Idle_normal.motion3.json"
+				}],
+			"Idle_normal": [{
+					"File": "motion/Idle_normal.motion3.json"
+				}],
+
+			"Idle_hard": [{
+					"File": "motion/Idle_hard.motion3.json"
+				}],
+                "Idle_normal_short": [{
+					"File": "motion/Idle_normal_short.motion3.json"
+				}],
+				"Idle_normal_mehuse": [{
+					"File": "motion/Idle_normal_mehuse.motion3.json"
+				}],
+				"Idle_normal_metoji": [{
+					"File": "motion/Idle_normal_metoji.motion3.json"
+				}],
+
+			    "Idle_kurusimu": [{
+					"File": "motion/Idle_kurusimu.motion3.json"
+				}],				
+				"Idle_kokyu_only": [{
+					"File": "motion/Idle_kokyu_only.motion3.json"
+				}],
+				"Idle_kokyu_only_op": [{
+					"File": "motion/Idle_kokyu_only_op.motion3.json"
+				}],			
+					"Idle_kamae": [{
+					"File": "motion/arms_kamae_idle.motion3.json"
+				}],
+				"Idle_no_coat_arm_tuika": [{
+					"File": "motion/Idle_no_coat_arm_tuika.motion3.json"
+				}],
+				"Idle_mode_2": [{
+					"File": "motion/Idle_mode_2.motion3.json"
+				}],
+				"Idle_mode_3": [{
+					"File": "motion/Idle_mode_3.motion3.json"
+				}],		
+				"Idle_mihiraki": [{
+					"File": "motion/Idle_normal_mihiraki.motion3.json"
+				}],							
+				"No_coat": [{
+					"File": "motion/no_coat.motion3.json"
+				}],
+				"Coat": [{
+					"File": "motion/coat.motion3.json"
+				}]							
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"PARAM_MOUTH_FORM",
+				"PARAM_MOUTH_OPEN_Y"
+			]
+		}
+	],
+	"HitAreas": []
+}

@@ -1,0 +1,126 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 1.6,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 10,
+		"TotalSegmentCount": 10,
+		"TotalPointCount": 20,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_BREATH",
+			"Segments": [
+				0,
+				1,
+				0,
+				1.6,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_HAIR_FRONT",
+			"Segments": [
+				0,
+				-0.001,
+				0,
+				1.6,
+				-0.001
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_HAIR_BACK",
+			"Segments": [
+				0,
+				-0.001,
+				0,
+				1.6,
+				-0.001
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_hair_top",
+			"Segments": [
+				0,
+				-0.001,
+				0,
+				1.6,
+				-0.001
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_aho",
+			"Segments": [
+				0,
+				-0.001,
+				0,
+				1.6,
+				-0.001
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_arm_udekumi",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_head_hand",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_poripori",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_kosi_left",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_kosi_right",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.6,
+				0
+			]
+		}
+	]
+}

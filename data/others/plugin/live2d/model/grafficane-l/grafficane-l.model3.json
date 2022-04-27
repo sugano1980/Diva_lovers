@@ -1,0 +1,36 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "grafficane-l.moc3",
+		"Textures": [
+			"grafficane-l.1024/texture_00.png"
+		],
+		"DisplayInfo": "grafficane-l.cdi3.json",
+		"Motions": {
+"Shokushu_2": [{
+					"File": "motion/shokushu_2.motion3.json"
+				}],
+		"Idle": [{
+					"File": "motion/Idle.motion3.json"
+				}],
+	"Normal": [{
+					"File": "motion/normal.motion3.json"
+				}],
+"Shokushu": [{
+					"File": "motion/shokushu.motion3.json"
+				}]
+		 }
+	},
+	"Groups": [{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}

@@ -1,0 +1,180 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 2.5,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 14,
+		"TotalSegmentCount": 16,
+		"TotalPointCount": 32,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ARM_L",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ARM_R",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_right_hands",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_left_hands",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_shorlder",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_right_arm_move",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_left_arm_move",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_ago_hand",
+			"Segments": [
+				0,
+				0,
+				0,
+				0.033,
+				0,
+				1,
+				0.089,
+				0,
+				0.144,
+				1,
+				0.2,
+				1,
+				0,
+				2.5,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_kusuimu",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_left_arm_temae",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_left_arm_stumei",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_right_arms_setumei",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_udekumi_tuika",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_udekumi",
+			"Segments": [
+				0,
+				0,
+				0,
+				2.5,
+				0
+			]
+		}
+	]
+}

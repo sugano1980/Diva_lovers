@@ -1,0 +1,82 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 1.333,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 6,
+		"TotalSegmentCount": 6,
+		"TotalPointCount": 12,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ARM_L",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ARM_R",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param10",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param11",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "udekumi",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param12",
+			"Segments": [
+				0,
+				0,
+				0,
+				1.333,
+				0
+			]
+		}
+	]
+}

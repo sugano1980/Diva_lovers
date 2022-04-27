@@ -1,0 +1,36 @@
+[macro name="status_up_tec_10"]
+[eval exp="f.irain_tec=f.irain_tec+10"]
+[playse storage="item_status_up_onjin.ogg"]
+技術が１０アップ！[p]
+[endmacro]
+
+[macro name="status_up_tec_20"]
+[eval exp="f.irain_tec=f.irain_tec+20"]
+[playse storage="item_status_up_onjin.ogg"]
+技術が２０アップ！[p]
+[endmacro]
+
+[macro name="status_up_brain_10"]
+[eval exp="f.irain_brain=f.irain_brain+10"]
+[playse storage="item_status_up_onjin.ogg"]
+頭脳が１０アップ！[p]
+[endmacro]
+
+[macro name="status_up_brain_20"]
+[eval exp="f.irain_brain=f.irain_brain+20"]
+[playse storage="item_status_up_onjin.ogg"]
+頭脳が２０アップ！[p]
+[endmacro]
+
+[macro name="status_up_charm_10"]
+[eval exp="f.irain_charm=f.irain_charm+10"]
+[playse storage="item_status_up_onjin.ogg"]
+魅力が１０アップ！[p]
+[endmacro]
+
+
+[macro name="status_up_charm_20"]
+[eval exp="f.irain_charm=f.irain_charm+20"]
+[playse storage="item_status_up_onjin.ogg"]
+魅力が２０アップ！[p]
+[endmacro]

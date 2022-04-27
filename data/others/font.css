@@ -1,0 +1,43 @@
+/*ウェブフォントを使用する場合はここに定義を追加して下さい*/
+
+@font-face {
+	font-family:"antique";
+	src:url("Mf_Break_The_Rules.eot?") format("eot"),
+	url("font_1_ant-maru.woff") format("woff"),
+	url("Mf_Break_The_Rules.svg#MfBreakTheRules") format("svg");
+	font-weight:normal;font-style:normal;
+}
+@font-face {
+	font-family:"mfrules";
+	src:url("Mf_Break_The_Rules.eot?") format("eot"),
+	url("Mf_Break_The_Rules.woff") format("woff"),
+	url("Mf_Break_The_Rules.ttf") format("truetype"),
+	url("Mf_Break_The_Rules.svg#MfBreakTheRules") format("svg");
+	font-weight:normal;font-style:normal;
+}
+
+@font-face {
+	font-family:"hannari";
+	src:url("Mf_Break_The_Rules.eot?") format("eot"),
+	url("Mf_Break_The_Rules.woff") format("woff"),
+	url("hannari.ttf") format("truetype"),
+	url("Mf_Break_The_Rules.svg#MfBreakTheRules") format("svg");
+	font-weight:normal;font-style:normal;
+}
+
+@font-face {
+	font-family:"makinas";
+	src:url("Mf_Break_The_Rules.eot?") format("eot"),
+	url("Mf_Break_The_Rules.woff") format("woff"),
+	url("Mamelon.ttf") format("truetype"),
+	url("Mf_Break_The_Rules.svg#MfBreakTheRules") format("svg");
+	font-weight:normal;font-style:normal;
+}
+@font-face {
+	font-family:"mgenplus";
+	src:url("Mf_Break_The_Rules.eot?") format("eot"),
+	url("Mf_Break_The_Rules.woff") format("woff"),
+	url("mgenplus-1m-bold.ttf") format("truetype"),
+	url("Mf_Break_The_Rules.svg#MfBreakTheRules") format("svg");
+	font-weight:normal;font-style:normal;
+}

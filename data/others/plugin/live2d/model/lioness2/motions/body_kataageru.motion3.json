@@ -1,0 +1,82 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 1.6,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 6,
+		"TotalSegmentCount": 6,
+		"TotalPointCount": 12,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_BREATH",
+			"Segments": [
+				0,
+				1,
+				0,
+				1.6,
+				1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_HAIR_FRONT",
+			"Segments": [
+				0,
+				0.004,
+				0,
+				1.6,
+				0.004
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_HAIR_BACK",
+			"Segments": [
+				0,
+				0.004,
+				0,
+				1.6,
+				0.004
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_hair_top",
+			"Segments": [
+				0,
+				0.004,
+				0,
+				1.6,
+				0.004
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param_aho",
+			"Segments": [
+				0,
+				0.004,
+				0,
+				1.6,
+				0.004
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "Param3",
+			"Segments": [
+				0,
+				1,
+				0,
+				1.6,
+				1
+			]
+		}
+	]
+}

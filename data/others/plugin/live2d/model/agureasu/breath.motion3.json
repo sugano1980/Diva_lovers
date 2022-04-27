@@ -1,0 +1,91 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 3.167,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 3,
+		"TotalSegmentCount": 9,
+		"TotalPointCount": 24,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ANGLE_Y",
+			"Segments": [
+				0,
+				0,
+				1,
+				0.544,
+				0,
+				1.089,
+				-9,
+				1.633,
+				-9,
+				1,
+				2.133,
+				-9,
+				2.633,
+				0,
+				3.133,
+				0,
+				0,
+				3.167,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_ANGLE_Z",
+			"Segments": [
+				0,
+				0,
+				1,
+				0.544,
+				0,
+				1.089,
+				1,
+				1.633,
+				1,
+				1,
+				2.133,
+				1,
+				2.633,
+				0,
+				3.133,
+				0,
+				0,
+				3.167,
+				0
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_BREATH",
+			"Segments": [
+				0,
+				0,
+				1,
+				0.278,
+				0,
+				0.556,
+				0.5,
+				0.833,
+				0.5,
+				1,
+				1.1,
+				0.5,
+				1.367,
+				0,
+				1.633,
+				0,
+				0,
+				3.167,
+				0
+			]
+		}
+	]
+}

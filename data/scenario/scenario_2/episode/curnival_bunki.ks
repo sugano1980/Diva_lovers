@@ -1,0 +1,46 @@
+
+[cm]
+;装備変更の選択肢
+[eval exp="f.curnival_bunki=1"]
+[soubi_henkou]
+*equip_end
+[button_hyouji]
+[eval exp="f.sub_event=0"]
+[eval exp="f.event_main_8_days=0"]
+[eval exp="f.event_main_8_gaishoku_on=0"]
+[eval exp="f.curnival_bunki=0"]
+[if exp="f.osasoi_else==1&&f.gales_yes==1"]
+[eval exp="f.event_main_9_normal=1"]
+[eval exp="f.choice=0"]
+[elsif exp="f.curnival_rans!=1&&f.curnival_lion!=1&&f.curnival_kra!=1"]
+[eval exp="f.event_main_9_normal=1"]
+[eval exp="f.choice=0"]
+[else]
+[eval exp="f.choice=998"]
+[endif]
+
+[eval exp="f.irain_heya=0"]
+[eval exp="f.kyuujitu=0"]
+[eval exp="f.jiyuu=0"]
+
+
+[if exp="f.event_main_10_rans==1"]
+[jump storage="scenario_2/episode/rans_curnival.ks" target=*gate_sentou]
+[elsif exp="f.event_main_10_lion==1"]
+[jump storage="scenario_2/episode/lion_curnival.ks" target=*gate_sentou]
+[elsif exp="f.event_main_10_kra==1"]
+[jump storage="scenario_2/episode/kra_curnival.ks" target=*gate_sentou]
+[elsif exp="f.event_main_10_normal==1||f.event_main_10_glif==1"]
+[jump storage="scenario_2/episode/normal_curnival.ks" target=*gate_sentou]
+[endif]
+
+
+[if exp="f.curnival_rans==1"]
+[jump storage="scenario_2/episode/rans_curnival.ks"]
+[elsif exp="f.curnival_lion==1"]
+[jump storage="scenario_2/episode/lion_curnival.ks"]
+[elsif exp="f.curnival_kra==1"]
+[jump storage="scenario_2/episode/kra_curnival.ks"]
+[else]
+[jump storage="scenario_2/episode/normal_curnival.ks"]
+[endif]

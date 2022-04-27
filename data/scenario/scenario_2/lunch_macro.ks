@@ -1,0 +1,117 @@
+[macro name="lunch_model_action_answer"]
+
+[if exp="f.friend==1&&f.rans_heart_kizuna>0"]
+
+[if exp="tf.sel==1"]
+[rans_head_right_z]
+[rans_exp_bisyo]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[0][0]"]
+[elsif exp="tf.sel==2"]
+[rans_head_under_y]
+[rans_head_normal]
+[rans_exp_mehuse_warai]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[0][1]"]
+[elsif exp="tf.sel==3"]
+[rans_exp_komari_warai]
+[rans_arms_kosinite_right]
+[rans_body_right_z]
+[rans_exp_bisyo]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[0][2]"]
+[endif]
+
+
+[elsif exp="f.friend==1"]
+
+[if exp="tf.sel==1"]
+[rans_head_under_y]
+[rans_head_normal]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[0][0]"]
+[elsif exp="tf.sel==2"]
+[rans_head_right_x]
+[rans_body_right_z]
+[rans_exp_komari]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[0][1]"]
+[elsif exp="tf.sel==3"]
+[rans_head_under_y]
+[rans_exp_mehuse]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[0][2]"]
+[endif]
+
+
+[elsif exp="f.friend==2&&f.lion_heart_kizuna>0"]
+
+[if exp="tf.sel==1"]
+[lioness_face_warai]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[1][0]"]
+[elsif exp="tf.sel==2"]
+[lioness_head_right_x][lioness_face_normal]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[1][1]"]
+[elsif exp="tf.sel==3"]
+[lioness_head_under_y]
+[lioness_head_normal]
+[lioness_head_right_z]
+[lioness_face_bakawarai]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[1][2]"]
+[endif]
+
+
+[elsif exp="f.friend==2"]
+
+[if exp="tf.sel==1"]
+[lioness_face_nemunemu]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[1][0]"]
+[elsif exp="tf.sel==2"]
+[lioness_head_right_x]
+[lioness_head_left_x]
+[lioness_head_normal]
+[lioness_face_odoroki_sekimen]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[1][1]"]
+[elsif exp="tf.sel==3"]
+[lioness_face_ha]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[1][2]"]
+[endif]
+
+[elsif exp="f.friend==3&&f.kra_heart_kizuna>0"]
+
+[if exp="tf.sel==1"]
+[aho_head_right_z]
+[aho_body_right_z]
+[aho_face_hutuu_warai]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[2][0]"]
+[elsif exp="tf.sel==2"]
+[aho_face_tomadoi]
+[aho_head_right_x]
+[aho_face_komari_warai]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[2][1]"]
+[elsif exp="tf.sel==3"]
+[aho_head_right_z]
+[aho_face_hutuu_bisyou]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer_t[2][2]"]
+[endif]
+
+[elsif exp="f.friend==3"]
+
+[if exp="tf.sel==1"]
+[aho_head_above_y]
+[aho_head_right_x]
+[aho_head_right_z]
+[aho_eyes_right]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[2][0]"]
+[elsif exp="tf.sel==2"]
+[aho_head_right_z]
+[aho_face_bisyou_youen]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[2][1]"]
+[elsif exp="tf.sel==3"]
+[aho_face_bisyou_youen]
+[eval exp="tf.lunch_answer_word = tf.lunch_answer[2][2]"]
+[endif]
+
+
+[endif]
+
+
+#&tf.men_name
+「[emb exp=tf.lunch_answer_word]」[p]
+#
+
+[endmacro]

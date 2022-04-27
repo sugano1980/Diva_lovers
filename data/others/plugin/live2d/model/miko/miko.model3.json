@@ -1,0 +1,47 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "miko.moc3",
+		"Textures": [
+			"miko.2048/texture_00.png"
+		],
+		"DisplayInfo": "miko.cdi3.json",
+		"Motions": {
+			"Idle": [
+				{
+					"File": "motions/Scene1.motion3.json"
+				}],
+				"Normal":[{
+					"File": "motions/normal.motion3.json"
+				}],
+				"Metoji":[{
+					"File": "motions/metoji.motion3.json"
+				}],
+				"Warai":[{
+					"File": "motions/warai.motion3.json"
+				}],
+				"Komari":[{
+					"File": "motions/komari.motion3.json"
+				}
+			]
+		}
+	},
+		"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	],
+
+	"HitAreas": []
+}

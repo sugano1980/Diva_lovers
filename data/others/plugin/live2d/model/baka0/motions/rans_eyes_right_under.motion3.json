@@ -1,0 +1,45 @@
+{
+	"Version": 3,
+	"Meta": {
+		"Duration": 1.333,
+		"Fps": 30.0,
+		"Loop": true,
+		"AreBeziersRestricted": false,
+		"CurveCount": 2,
+		"TotalSegmentCount": 3,
+		"TotalPointCount": 7,
+		"UserDataCount": 0,
+		"TotalUserDataSize": 0
+	},
+	"Curves": [
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_BALL_X",
+			"Segments": [
+				0,
+				1,
+				1,
+				0.189,
+				1,
+				0.378,
+				-1,
+				0.567,
+				-1,
+				0,
+				1.333,
+				-1
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Id": "PARAM_EYE_BALL_Y",
+			"Segments": [
+				0,
+				-1,
+				0,
+				1.333,
+				-1
+			]
+		}
+	]
+}
