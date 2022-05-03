@@ -496,8 +496,14 @@
 
 *battle_start
 [eval exp="f.friend=2"]
-[eval exp="f.monster_group_28=1"]
-[eval exp="f.werumu_battle=1"]
+[eval exp="f.monster_group_27=1"]
+;[eval exp="f.makara_battle=1"]
+;[eval exp="f.monster_l_size_3=0"]
+;[eval exp="f.monster_l_size=1"]
+;[eval exp="f.monster_l_size_2=0"]
+;[eval exp="f.rusia_l_size=0"]
+;[eval exp="tf.w_attack=0"]
+
 [call storage="scenario_2/live2d_lioness_macro.ks"]
 [stopbgm]
 [battle_start]
@@ -5630,7 +5636,28 @@
 [chara_hide_all][stopbgm]
 [live2d_fadeout time=1000]	
 ;	戦闘
+*battle_start_w
+[eval exp="f.friend=2"]
+[eval exp="f.monster_group_28=1"]
+[eval exp="f.werumu_battle=1"]
+;[eval exp="f.monster_l_size_3=0"]
+;[eval exp="f.monster_l_size=1"]
+;[eval exp="f.monster_l_size_2=0"]
+;[eval exp="f.rusia_l_size=0"]
+[eval exp="tf.w_attack=1"]
 
+[call storage="scenario_2/live2d_lioness_macro.ks"]
+[stopbgm]
+[battle_start]
+
+*battle_end_w
+[eval exp="f.monster_group_28=0"]
+[eval exp="f.werumu_battle=0"]
+[eval exp="tf.w_attack=0"]
+[message_settei_ad]
+[live2d_lion_touroku]
+[live2d_fadeout time=50]
+[live2d_lion_show_sekkin]
 
 ;[live2d_lion_touroku]
 ;[live2d_lion_show_sekkin]
@@ -5645,7 +5672,7 @@
 [free layer=3 name="aka" time=3000]
 
 [lioness_face_odoroki]
-[live2d_fadein time=50]
+[live2d_fadein time=5000]
 #ライオネス	
 「[name]！！！」[p]
 #
@@ -5665,6 +5692,7 @@
 [free layer=3 name="aka"]
 [reset_camera]
 
+[playbgm storage="milktea_ontama.ogg"]
 #ライオネス	
 「[name]！！[name]！！！」[p]
 #
@@ -5687,11 +5715,24 @@
 「ーーーーーー」[p]
 #
 	
-	
+
+[fadeoutbgm time=8000]
+;分岐
+[wait time=8000]
+[if exp="f.lion_last_ok!=1"]
+[message_kakusu_ad]
+[bg storage="siro.jpg"]
+[free name="kuro" layer=3]
+[wait time=1000]
+[ptext layer="3" page="fore" text="End" x="380" y="250" size="25" face="hannari" color="black" bold="" edge="" shadow="" name="moji" width="" align="" time="1000"]
+[wait time=3000]
+[free name="moji" layer=3 time=1000]
+[jump target=*lion_last_end]
+[endif]
 ;	自室
 [anten]
 [free name="kuro" layer=3]
-[bg storage="irainheya_tasogare.jpg"]
+[bg storage="irainheya_tasogare.jpg" time=5000]
 
 
 #&f.name	
@@ -6108,6 +6149,7 @@
 	
 [live2d_fadeout time=50]
 [tris_tatie_touroku]
+[config_true]
 [tris_tatie_show]
 #トリスタン	
 「おいお前らいつまで・・・・・・・
@@ -6383,6 +6425,8 @@
 [free name="moji" layer=3 time=1000]
 
 [s]
+
+
 *epilogue
 [fadeoutbgm time=3000]
 
@@ -6393,7 +6437,14 @@
 
 [anten]
 
-
+*lion_last_end
+[live2d_delete_all][live2d_off][message_kakusu_ad]
+[button_clear]
+[reset_camera]
+[wait time=2000]
+[iscript]
+location.reload()
+[endscript]
 
 [s]
 

@@ -296,7 +296,7 @@ Math.floor(tf.friend_attack);
 [endscript]
 
 [if exp="tf.friend_attack>999"]
-[eval exp="tf.friend_attack=999"]
+;[eval exp="tf.friend_attack=999"]
 [endif]
 
 
@@ -320,7 +320,7 @@ Math.floor(tf.friend_guard);
 [endscript]
 
 [if exp="tf.friend_guard>999"]
-[eval exp="tf.friend_guard=999"]
+;[eval exp="tf.friend_guard=999"]
 [endif]
 
 

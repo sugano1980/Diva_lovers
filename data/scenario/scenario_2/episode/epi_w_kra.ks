@@ -2016,6 +2016,28 @@
 
 [live2d_fadeout time=1000]
 ;バトル
+*battle_start
+[eval exp="f.friend=3"]
+[eval exp="f.monster_group_30=1"]
+[eval exp="f.makara_battle=1"]
+;[eval exp="f.monster_l_size_3=0"]
+[eval exp="f.monster_l_size=1"]
+;[eval exp="f.monster_l_size_2=0"]
+;[eval exp="f.rusia_l_size=0"]
+;[eval exp="tf.w_attack=0"]
+
+[call storage="scenario_2/live2d_aho_macro.ks"]
+[stopbgm]
+[battle_start]
+
+*battle_end
+[eval exp="f.monster_group_30=0"]
+[eval exp="f.makara_battle=0"]
+[eval exp="f.monster_l_size=0"]
+[message_settei_ad]
+[live2d_kra_touroku]
+[live2d_kra_show_sekkin]
+
 ;[s]
 [aho_mod_idle_normal]
 [aho_arms_normal]

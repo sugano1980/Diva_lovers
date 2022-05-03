@@ -90,19 +90,19 @@ tf.kakuritu = tf.kakuritu-1
 ;毒解除
 ;頭脳によって決まる
 [if exp="f.irain_brain<100"]
-[eval exp="tf.kakuritu=10"]
-[elsif exp="f.irain_brain<200"]
-[eval exp="tf.kakuritu=9"]
-[elsif exp="f.irain_brain<300"]
 [eval exp="tf.kakuritu=8"]
-[elsif exp="f.irain_brain<400"]
+[elsif exp="f.irain_brain<200"]
 [eval exp="tf.kakuritu=7"]
-[elsif exp="f.irain_brain<500"]
+[elsif exp="f.irain_brain<300"]
 [eval exp="tf.kakuritu=6"]
-[elsif exp="f.irain_brain<600"]
+[elsif exp="f.irain_brain<400"]
 [eval exp="tf.kakuritu=5"]
-[elsif exp="f.irain_brain<701"]
+[elsif exp="f.irain_brain<500"]
 [eval exp="tf.kakuritu=4"]
+[elsif exp="f.irain_brain<600"]
+[eval exp="tf.kakuritu=3"]
+[elsif exp="f.irain_brain<701"]
+[eval exp="tf.kakuritu=2"]
 [endif]
 
 ;[elsif exp="f.irain_brain<86"]
@@ -119,12 +119,14 @@ tf.kakuritu= Math.floor(Math.random() * tf.kakuritu) + 1
 ;毒解除
 [if exp="tf.kakuritu==1"]
 [eval exp="tf.irain_sp[0]=0"]
+[eval exp="tf.irain_doku=0"]
 [free layer=3 name="doku_irain"]
 [endif]
 
 ;まひ解除
 [if exp="tf.kakuritu==1"]
 [eval exp="tf.irain_sp[1]=0"]
+[eval exp="tf.irain_mahi=0"]
 [free layer=3 name="mahi_irain"]
 [endif]
 
@@ -187,7 +189,7 @@ tf.kakuritu_f= Math.floor(Math.random() * tf.kakuritu_f) + 1
 
 ;スキル封じ解除
 [if exp="tf.kakuritu_f==1"]
-[eval exp="tf.friend_skill=0"]
+[eval exp="tf.friend_skill_no=0"]
 [eval exp="tf.skill_f_impossble=0"]
 [free layer=3 name="skill_friend"]
 [endif]

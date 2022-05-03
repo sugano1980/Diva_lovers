@@ -61,6 +61,17 @@
 [free name="chara_name_area" layer="message1"]
 [message_settei_ad]
 ;[refresh_hanyou]
+
+;ウェルム戦敗北
+[if exp="tf.irain_target_w==1"]
+[jump storage="scenario_2/episode/epi_w_lion.ks" target="*battle_end_w"]
+[endif]
+
+;ウェルム戦ランス
+[if exp="tf.werumu_rans_last==1"]
+[jump storage="scenario_2/episode/epi_w_rans.ks" target="*rans_battle_end"]
+[endif]
+
 ;ルシア戦敗北
 [if exp="f.event_main_11==1"]
 [eval exp="tf.guard_no=0"]
@@ -97,6 +108,7 @@
 [else]
 [jump storage="scenario_2/mini_game/after_battle.ks" target=*event_nasi_lose]
 [endif]
+
 
 
 [game_over]
@@ -163,8 +175,12 @@
 
 ;イベントごと場合わけ
 
-[if exp="f.lion_flag==1"]
+[if exp="f.lion_flag==1&&f.werumu_battle==1"]
+[jump storage="scenario_2/episode/epi_w_lion.ks" target="*battle_end_w"]
+[elsif exp="f.lion_flag==1"]
 [jump storage="scenario_2/episode/epi_w_lion.ks" target="*battle_end"]
+[elsif exp="f.kra_flag==1"]
+[jump storage="scenario_2/episode/epi_w_kra.ks" target="*battle_end"]
 [endif]
 
 [if exp="f.event_war_rans==1"]

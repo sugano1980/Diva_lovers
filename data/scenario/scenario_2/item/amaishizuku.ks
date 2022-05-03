@@ -44,6 +44,20 @@
 
 [endif]
 
+;スキル封じ解除
+[if exp="tf.irain_sp[3]==1"]
+[eval exp="tf.irain_sp[3]=0"]
+[eval exp="tf.skill_impossble=0"]
+[free layer=3 name="skill_irain"]
+[endif]
+
+;スキル封じ解除
+[if exp="tf.friend_skill_no==1"]
+[eval exp="tf.friend_skill_no=0"]
+[eval exp="tf.skill_f_impossble=0"]
+[free layer=3 name="skill_friend"]
+[endif]
+
 
 ;味方の特殊状態解除
 ;毒解除
@@ -168,7 +182,8 @@
 [clearstack]
 
 
-[if exp="f.werumu_battle==1"]
+[if exp="f.werumu_battle==1||f.varius_battle==1"]
+
 [eval exp="f.irain_hp = f.irain_hp_m"]
 [eval exp="f.irain_tec = f.irain_tec_c"]
 [free layer=3 name="irain_hp"]

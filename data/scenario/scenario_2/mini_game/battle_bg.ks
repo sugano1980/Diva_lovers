@@ -44,6 +44,14 @@
 [elsif exp="f.monster_group_27==1"]
 [eval exp="tf.bgimage_battle_0='mujintou1_tasogare.jpg'"]
 
+[elsif exp="f.monster_group_28==1"]
+[eval exp="tf.bgimage_battle_0='gyokuza_tasogare.jpg'"]
+
+[elsif exp="f.makara_battle==1"]
+[eval exp="tf.bgimage_battle_0='black.jpg'"]
+
+[elsif exp="f.varius_battle==1"]
+[eval exp="tf.bgimage_battle_0='ijigen.jpg'"]
 
 [else]
 [eval exp="tf.bgimage_battle_0='tougijou_ac.jpg'"]
@@ -123,6 +131,15 @@
 [playbgm storage="erumu_senjou.ogg"]
 [elsif exp="f.monster_group_27==1"]
 [playbgm storage="sentou_siken.ogg"]
+[elsif exp="f.monster_group_28==1"]
+
+[playbgm storage="rusia_bgm.ogg"]
+
+[elsif exp="f.makara_battle==1"]
+[playbgm storage="soudou.ogg"]
+
+[elsif exp="f.varius_battle==1"]
+[playbgm storage="variasu_battle.ogg"]
 [else]
 [playbgm storage="battle_bgm.ogg"]
 [endif]

@@ -66,7 +66,11 @@ tf.nigeru_action = Math.floor( Math.random() * 3) + 1
 [monster_voice]
 
 ;ボス戦は別ファイル
-[if exp="f.werumu_battle==1"]
+[if exp="f.makara_battle==1"]
+[jump storage="scenario_2/mini_game/boss_attack.ks"]
+[elsif exp="f.varius_battle==1"]
+[jump storage="scenario_2/mini_game/boss_attack.ks"]
+[elsif exp="f.werumu_battle==1"]
 [jump storage="scenario_2/mini_game/boss_attack.ks"]
 [elsif exp="f.rusia_battle==1"]
 [jump storage="scenario_2/mini_game/boss_attack.ks"]
@@ -109,6 +113,10 @@ tf.monster_damage = Math.floor( Math.random() *tf.monster_damage) + tf.monster_d
 [if exp="tf.monster_damage<0"]
 [eval exp="tf.monster_damage=0"]
 [endif]
+;ボス：マカラ
+[if exp="f.makara_battle==1"]
+[makara_attack_end]
+[endif]
 
 [jump target=*friend_damage]
 [endif]
@@ -117,6 +125,10 @@ tf.monster_damage = Math.floor( Math.random() *tf.monster_damage) + tf.monster_d
 ;---
 
 *igyou_attack_end_irain
+;ボス；マカラ
+[if exp="f.makara_battle==1"]
+[makara_attack_end]
+[endif]
 [jump target=*irain]
 
 
@@ -415,6 +427,12 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 [endscript]
 
 [irain_damage_swing]
+
+;ウェルムのイベントの場合
+[if exp="tf.irain_target_w==1"]
+[eval exp="tf.monster_damage=f.irain_hp"]
+[endif]
+
 [eval exp="f.irain_hp=f.irain_hp-tf.monster_damage"]
 ;消去後再表示でHP減少表現
 [free layer=3 name="irain_hp"]

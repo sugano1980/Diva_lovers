@@ -387,6 +387,9 @@ tf.meichu = Math.floor( Math.random() * f.irain_tec) + 1
 
 [if exp="tf.monster_1_death==1&&tf.monster_2_death==1&&tf.monster_3_death==1"]
 ;----------------------------
+;ウェルムラスト
+[werumu_last]
+[werumu_last_rans]
 
 [if exp="f.event_main_11!=1&&f.rusia_battle==1"]
 [free name="vaeru" layer=3]
@@ -599,6 +602,18 @@ tf.meichu = Math.floor( Math.random() * f.irain_tec) + 1
 
 ;下にあるirain_mahiで処理、戻ってきたら仲間のターン準備、すでに仲間のターンが終わっていればモンスターのターン
 *irain_mahi_modoru
+
+
+;アイテム使用から戻ってきた場所*irain_mahiから
+
+[if exp="tf.guard_zero==1"]
+[eval exp="tf.irain_guard_y=tf.irain_hp_y+15"]
+[eval exp="tf.irain_guard_f_y=tf.friend_hp_y+15"]
+[image layer=3 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero" x=&tf.irain_hp_x y=&tf.irain_guard_y]
+[image layer=3 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero_f" x=&tf.friend_hp_x y=&tf.irain_guard_f_y]
+[endif]
+
+
 [if exp="tf.friend_battle>=1&&tf.battle_turn==0"]
 [eval exp="tf.battle_turn=1"]
 ;オートなのでモンスターのボタン状態を切り替え
@@ -984,6 +999,8 @@ tf.sp_mahi_3='';
 
 
 *irain_mahi
+
+
 [if exp="tf.monster_hp_1>=1&&tf.monster_1_death!=1"]
 [monster1_irekae]
 [endif]

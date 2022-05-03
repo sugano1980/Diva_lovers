@@ -1,7 +1,109 @@
 
-;ウェルムバトル
 
-[if exp="f.werumu_battle==1"]
+
+
+;ターンの終わりにフェイズナンバーを入力
+[if exp="f.varius_battle==1"]
+
+[if exp="tf.phase_num==1&&tf.phase_heal==1"]
+[eval exp="tf.phase_attack=1"]
+[eval exp="tf.phase_num=0"]
+[eval exp="tf.phase_heal=0"]
+[elsif exp="tf.phase_num==3&&tf.phase_attack==1"]
+[eval exp="tf.phase_heal=1"]
+[eval exp="tf.phase_num=0"]
+[eval exp="tf.phase_attack=0"]
+[elsif exp="tf.phase_heal==1"]
+[eval exp="tf.phase_num=tf.phase_num+1"]
+[elsif exp="tf.phase_attack==1"]
+[eval exp="tf.phase_num=tf.phase_num+1"]
+[else]
+[eval exp="tf.phase_attack=1"]
+[eval exp="tf.phase_num=0"]
+[endif]
+
+
+[eval exp="tf.v_attack_h=0"]
+[eval exp="tf.v_attack_a=0"]
+
+[if exp="tf.phase_heal==1"]
+[bg storage="ijigen_blue.jpg"]
+[iscript]
+tf.v_attack_h = Math.floor( Math.random() * 2) + 1
+[endscript]
+[elsif exp="tf.phase_attack==1"]
+[bg storage="ijigen_red.jpg"]
+[iscript]
+tf.v_attack_a = Math.floor( Math.random() * 5) + 1
+[endscript]
+[endif]
+
+
+[if exp="tf.v_attack_h==1"]
+[varius_heal]
+[jump target=*boss_end]
+[elsif exp="tf.v_attack_h==2"]
+[kouka_mukou]
+[jump target=*boss_end]
+[elsif exp="tf.v_attack_a==1"]
+[varius_mahou]
+[jump target=*murti_attack]
+[elsif exp="tf.v_attack_a==2"]
+[attack_down_v]
+[jump target=*boss_end]
+[elsif exp="tf.v_attack_a==3&&tf.skill_nasi!=1"]
+[skill_huuji]
+[jump target=*boss_end]
+[elsif exp="tf.v_attack_a==3"]
+[jump target=*single_attack]
+[elsif exp="tf.v_attack_a==4"]
+[jump target=*single_attack]
+[elsif exp="tf.v_attack_a==5"]
+[varius_hp_1]
+[jump target=*murti_attack]
+[endif]
+
+[endif]
+
+
+;マカラバトル
+[if exp="f.makara_battle==1"]
+
+;まひ攻撃、津波、通常攻撃のいずれ
+[iscript]
+tf.w_attack = Math.floor( Math.random() * 3) + 1
+[endscript]
+[eval exp="tf.w_attack=3"]
+
+[if exp="tf.w_attack==1&&tf.irain_sp[1]!=1"]
+[makara_otakebi]
+[jump target=*boss_end]
+
+[elsif exp="tf.w_attack===1"]
+[jump target=*single_attack]
+
+[elsif exp="tf.w_attack===2"]
+[jump target=*single_attack]
+
+[elsif exp="tf.w_attack==3"]
+[makara_mahou_anime]
+[jump target=*murti_attack]
+[endif]
+
+
+
+
+[endif]
+
+
+
+
+;ウェルムバトル
+[if exp="f.werumu_battle==1&&f.friend==2||f.werumu_battle==1&&f.friend==1"]
+[werumu_last]
+[werumu_last_rans]
+
+
 ;攻撃力ダウン、滅多斬り、通常攻撃のいずれ
 [iscript]
 tf.w_attack = Math.floor( Math.random() * 3) + 1
@@ -85,6 +187,7 @@ tf.mahou_type = Math.floor( Math.random() *4) +1
 *single_attack
 ;ここから
 ;ガードボタンの数決める
+
 [guard_button_gacha]
 
 
@@ -95,14 +198,21 @@ tf.mahou_type = Math.floor( Math.random() *4) +1
 ;-------------------
 
 [eval exp="tf.attack_who=2"]
+
+[if exp="tf.irain_target_w==1"]
+[jump target=*target_irain]
+[endif]
+
 [if exp="f.friend>=1&&tf.friend_death!=1"]
 ;---
 [iscript]
 tf.attack_random = Math.floor( Math.random() * tf.attack_who) + 1
 [endscript]
 [else]
+*target_irain
 ;仲間いない場合イレインのフラグ
 [eval exp="tf.attack_random=2"]
+[eval exp="tf.guard_no=1"]
 [endif]
 
 
@@ -130,6 +240,11 @@ tf.attack_random = Math.floor( Math.random() * tf.attack_who) + 1
 [rusia_sword]
 [elsif exp="f.werumu_battle==1"]
 [werumu_sword]
+[elsif exp="f.makara_battle==1"]
+[igyou_attack_animation]
+;[makara_attack]
+[elsif exp="f.varius_battle==1"]
+[varius_sword]
 [endif]
 
 [eval exp="tf.monster_graphic_1=tf.monster_gra_no_1"]
@@ -201,8 +316,19 @@ tf.monster_damage_f = Math.floor( Math.random() *tf.monster_damage_f) + tf.monst
 [iscript]
 tf.calc_damage =  Math.floor(Math.random()*3)+1
 
-if(f.werumu_battle===1&&tf.metta===1){
 
+
+
+
+
+if(tf.v_hp1==1){
+//////////////////////////////
+//////////////////////////
+//////////////////////
+//////////////////////////////
+}else if(f.werumu_battle===1&&tf.metta===1){
+
+//////////////////////////
 if(tf.calc_damage==1){
 
 tf.monster_damage*=4.8;
@@ -215,7 +341,12 @@ tf.monster_damage*=4.9;
 
 tf.monster_damage*=5.0;
 
-}else if(tf.calc_damage==1){
+//////////////////////
+}
+
+}else{
+///////////////////
+if(tf.calc_damage==1){
 
 tf.monster_damage*=0.8;
 
@@ -228,7 +359,13 @@ tf.monster_damage*=0.9;
 tf.monster_damage*=1.0;
 
 }
+//////////////////////////
+
 }
+
+
+
+
 tf.metta=0;
 
 tf.monster_damage = Math.floor(tf.monster_damage)
@@ -238,10 +375,14 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 
 ;---
 
-
-
-
 [if exp="f.friend>=1&&tf.friend_death!=1"]
+
+;ヴァリアスの瀕死攻撃
+[if exp="tf.v_hp1==1"]
+[eval exp="tf.monster_damage_f=tf.friend_hp-1"]
+[endif]
+
+
 [friend_damage_swing]
 [eval exp="tf.friend_hp=tf.friend_hp-tf.monster_damage_f"]
 ;消去後再表示でHP減少表現
@@ -366,6 +507,14 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 
 
 [irain_damage_swing]
+
+
+;ヴァリアスの瀕死攻撃
+[if exp="tf.v_hp1==1"]
+[eval exp="tf.monster_damage=f.irain_hp-1"]
+[eval exp="tf.v_hp1=0"]
+[endif]
+
 [eval exp="f.irain_hp=f.irain_hp-tf.monster_damage"]
 ;消去後再表示でHP減少表現
 [free layer=3 name="irain_hp"]
@@ -400,6 +549,12 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 [rusia_sword]
 
 *boss_end
+[if exp="tf.layer_change!=1"]
+[irain_hp_layer_change_return]
+[endif]
+[if exp="tf.layer_change_friend!=1"]
+[friend_hp_layer_change_return]
+[endif]
 
 
 

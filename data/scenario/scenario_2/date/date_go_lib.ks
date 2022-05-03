@@ -3254,7 +3254,9 @@ var place_len = f.place_sel.length;
 #
 [live2d_fadeout time=1000]
 
-[if exp="f.s_wesuta==1"]
+[if exp="f.s_wesuta==1&&f.event_main_18_days>0"]
+[bg storage="wesuta_yado_yoru.jpg"]
+[elsif exp="f.s_wesuta==1"]
 [bg storage="hune_yoru_room.jpg"]
 [elsif exp="f.s_wesuta!=1]
 [bg storage="irainheya_yoru_tasogare.jpg"]
@@ -3270,7 +3272,9 @@ var place_len = f.place_sel.length;
 #
 [live2d_fadeout time=1000]
 
-[if exp="f.s_wesuta==1"]
+[if exp="f.s_wesuta==1&&f.event_main_18_days>0"]
+[bg storage="wesuta_yado_yoru.jpg"]
+[elsif exp="f.s_wesuta==1"]
 [bg storage="hune_yoru_room.jpg"]
 [elsif exp="f.s_wesuta!=1]
 [bg storage="irainheya_yoru_tasogare.jpg"]

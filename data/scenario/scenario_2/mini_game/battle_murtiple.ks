@@ -189,6 +189,12 @@ tf.kra_skill = Math.floor( Math.random() * tf.kra_skill) + 1
 
 *friend_attack_owari
 ;仲間の攻撃ステータスアニメ終了
+
+;ランスシナリオウェルムラスト
+[if exp="tf.werumu_rans_last==1"]
+[after_battle_lose]
+[endif]
+
 [friend_attack_anime_end]
 ;単数の場合と複数の場合にわけてダメージ計算
 ;消去後再表示でHP減少表現
@@ -249,6 +255,8 @@ tf.kra_skill = Math.floor( Math.random() * tf.kra_skill) + 1
 *sokusi_1
 [monster_death]
 [jump target=*attack_end]
+
+
 [endif]
 
 

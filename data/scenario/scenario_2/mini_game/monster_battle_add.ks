@@ -965,9 +965,6 @@ tf.friend_hp_hyouji = friend_hp_hyouji
 ;イレインHP更新
 [macro name="irain_hp_kousin"]
 
-
-
-
 [eval exp="f.irain_hp_m=f.irain_tec+f.irain_brain+f.irain_charm"]
 
 [if exp="f.irain_hp_m>9998"]
@@ -2621,6 +2618,14 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [free layer=3 name="nemuri_irain"]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[free layer=3 name="skill_irain"]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[free layer=3 name="guard_icon_zero"]
+[endif]
+
 
 ;名前
 [ptext layer=2 page=fore visible="true" text="&f.name" name="irain_name" size=25 x="&tf.irain_status_x" y="&tf.irain_status_y"]
@@ -2665,6 +2670,13 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [image layer=2 page=fore visible="true" storage="nemuri.gif" name="nemuri_irain" x=&tf.irain_nemuri_x y=&tf.irain_sp_y]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[image layer=2 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_irain" x=&tf.irain_skill_x y=&tf.irain_sp_y]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[image layer=2 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero" x=&tf.irain_hp_x y=&tf.irain_guard_y]
+[endif]
 
 
 
@@ -2688,6 +2700,15 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 
 [if exp="tf.friend_nemuri==1"]
 [free name="nemuri_friend" layer=3]
+[endif]
+
+
+[if exp="tf.friend_skill_no==1"]
+[free name="skill_friend" layer=3]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[free layer=3 name="guard_icon_zero_f"]
 [endif]
 
 
@@ -2716,6 +2737,14 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [if exp="tf.friend_doku==1"]
 [image layer=2 page=fore visible="true" storage="doku.gif" name="doku_friend" x=&tf.friend_face_x y=&tf.friend_sp_y]
 [endif]
+[if exp="tf.friend_skill_no==1"]
+[image layer=2 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_friend" x=&tf.friend_skill_x y=&tf.friend_sp_y]
+[endif]
+[if exp="tf.guard_zero==1"]
+[image layer=2 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero_f" x=&tf.friend_hp_x y=&tf.irain_guard_f_y]
+[endif]
+
+
 [endmacro]
 
 
@@ -2739,6 +2768,14 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 
 [if exp="tf.irain_sp[2]==1"]
 [free layer=2 name="nemuri_irain"]
+[endif]
+
+[if exp="tf.irain_sp[3]==1"]
+[free layer=2 name="skill_irain"]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[free layer=2 name="guard_icon_zero"]
 [endif]
 
 
@@ -2772,6 +2809,14 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [image layer=3 page=fore visible="true" storage="nemuri.gif" name="nemuri_irain" x=&tf.irain_nemuri_x y=&tf.irain_sp_y]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[image layer=3 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_irain" x=&tf.irain_skill_x y=&tf.irain_sp_y]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[image layer=3 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero" x=&tf.irain_hp_x y=&tf.irain_guard_y]
+[endif]
+
 
 
 [endmacro]
@@ -2791,9 +2836,18 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [free name="doku_friend" layer=2]
 [endif]
 
+
+[if exp="tf.friend_skill_no==1"]
+[free name="skill_friend" layer=2]
+[endif]
+
+[if exp="tf.guard_zero==1"]
+[free layer=2 name="guard_icon_zero_f"]
+[endif]
+
+
 ;名前
 [ptext layer=3 page=fore visible="true" text="&tf.friend_name" name="friend_name" size=25 x=&tf.friend_name_x y=&tf.friend_name_y]
-
 
 
 [ptext layer=3 page=fore visible="true" text="HP:" name="friend_hp" size=15 x=&tf.friend_hp_x y=&tf.friend_hp_y]
@@ -2818,7 +2872,13 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [endif]
 
 
+[if exp="tf.friend_skill_no==1"]
+[image layer=3 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_friend" x=&tf.friend_skill_x y=&tf.friend_sp_y]
+[endif]
 
+[if exp="tf.guard_zero==1"]
+[image layer=3 page=fore visible=true storage="guard_zero_icon.png" name="guard_icon_zero_f" x=&tf.friend_hp_x y=&tf.irain_guard_f_y]
+[endif]
 
 
 [endmacro]
@@ -2987,7 +3047,7 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [rans_tatie_battle_serihu]
 [endif]
 
-「ありがとう、[name]。お前のその声は・・・いつも私を勇気づけてくれる」[w][cm]
+[font size=23 edge=0x000000]「ありがとう、[name]。お前のその声は・・・いつも私を勇気づけてくれる」[w][cm]
 [chara_kakusu]
 [eval exp="tf.men_koukando = f.ranskonkando"]
 [elsif exp="f.friend==2"]
@@ -3004,7 +3064,7 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [lioness_tatie_battle_serihu]
 [endif]
 
-「おう！！さっさと終わらせようぜ！」[cm]
+[font size=23 edge=0x000000]「おう！！さっさと終わらせようぜ！」[cm]
 [if exp="f.event_war_lion==1&&f.episode_flag==4"]
 [w][w]
 [free layer=0 name="lion"]
@@ -3020,7 +3080,7 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [kra]
 [endif]
 [kra_tatie_battle_serihu]
-「うん。もちろん、頑張るよ。・・・君のためにね」[w][cm]
+[font size=23 edge=0x000000]「うん。もちろん、頑張るよ。・・・君のためにね」[w][cm]
 [chara_kakusu]
 [eval exp="tf.men_koukando = f.krakonkando"]
 [elsif exp="f.friend==5"]
@@ -3037,7 +3097,7 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 
 
 [glif_tatie_battle_serihu]
-「ありがとうございます。不思議ですね・・・あなたの声を聞くだけで、こんなにも勇気が湧いてくる」[w][cm]
+[font size=23 edge=0x000000]「ありがとうございます。不思議ですね・・・あなたの声を聞くだけで、こんなにも勇気が湧いてくる」[w][cm]
 #
 [chara_kakusu]
 [eval exp="tf.men_koukando = f.glifkonkando"]
@@ -3066,11 +3126,11 @@ tf.guard_ran = Math.floor(Math.random() * 6) + 1
 [endif]
 
 [if exp="tf.friend_attack>999"]
-[eval exp="tf.friend_attack=999"]
+;[eval exp="tf.friend_attack=999"]
 [endif]
 
 [if exp="tf.friend_guard>999"]
-[eval exp="tf.friend_guard=999"]
+;[eval exp="tf.friend_guard=999"]
 [endif]
 
 [eval exp="tf.friend_hp = tf.friend_hp_m"]
@@ -3380,6 +3440,8 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 [anim name="monster_hp_2" top="-=800" time=200]
 [anim name="monster_hp_3" top="-=800" time=200]
 
+[anim name="click" top="-=800" time=200]
+
 [if exp="f.rusia_battle==1"]
 [anim name="vaeru" top="-=800" time=200]
 [endif]
@@ -3401,6 +3463,8 @@ tf.monster_damage = Math.floor(tf.monster_damage)
 [anim name="monster_hp_1" top="+=800" time=200]
 [anim name="monster_hp_2" top="+=800" time=200]
 [anim name="monster_hp_3" top="+=800" time=200]
+
+[anim name="click" top="+=800" time=200]
 
 [if exp="f.rusia_battle==1"]
 [anim name="vaeru" top="+=800" time=200]
@@ -3902,7 +3966,280 @@ tf.o_kakuritu = Math.floor( Math.random() * 3) + 1
 
 
 
+[macro name="werumu_last"]
+[if exp="f.werumu_battle==1&&f.friend==2"]
+
+;瀕死のとき、そしてライオネスシナリオでイベント
+[if exp="tf.monster_hp_1<tf.monster_hp_1_m*0.3"]
+;もんぐらとステータス画面を一時的にむーぶ
+
+[item_window_open]
+[battle_gamen_idou]
+
+[if exp="tf.irain_sp[1]==1"]
+[eval exp="tf.irain_sp[1]=0"]
+[eval exp="tf.irain_mahi=0"]
+[free name="irain_mahi" layer=2]
+[endif]
+
+[werumu_v_tatie_touroku]
+[werumu_tatie_vaeru]
+#ウェルム
+[font size=23 edge=0x000000]「・・・っくっ・・・」[l][cm]
+
+#&f.name
+[font size=23 edge=0x000000]（動きが鈍ってきた・・・あともう少し・・・！）[l][cm]
+
+[chara_hide_all]
+[lioness_tatie_touroku]
+[chara_show name="lion" storage="&f.lion_otikomi" height="698" width="456" top=-35 left=0]
+[config_false]
+[werumu_tatie_vaeru]
+#ライオネス
+[font size=23 edge=0x000000]「・・・・・・」[l][cm]
+
+#&f.name
+[font size=23 edge=0x000000]（ライオネス・・・）[l][cm]
+
+[werumu_tatie_v_mehuse]
+#ウェルム
+[font size=23 edge=0x000000]「・・・このっ・・・小娘が・・・っ
+[werumu_tatie_v_ikari]
+・・・こざかしいわっ！！！！！」[l][cm]
+
+#&f.name
+[font size=23 edge=0x000000]「・・・！！！」[l][cm]
+
+[lioness_tatie_odoroki]
+#ライオネス
+[font size=23 edge=0x000000]「・・・！！！[name]！！！！！」[l][cm]
+#
+[l][cm]
+[chara_hide_all][chara_off]
+[battle_gamen_return]
+[item_window_close]
+[eval exp="tf.irain_target_w=1"]
+[eval exp="tf.guard_zero=0"]
+[jump storage="scenario_2/mini_game/boss_attack.ks" target=*single_attack]
+[endif]
+[endif]
+
+
+
+
+
+[endmacro]
+
 ;
+
+[macro name="werumu_last_rans"]
+
+[if exp="f.friend==1"]
+;瀕死のとき、そしてイベント
+[if exp="tf.monster_hp_1<tf.monster_hp_1_m*0.3"]
+
+[item_window_open]
+[battle_gamen_idou]
+
+[werumu_v_tatie_touroku]
+[werumu_tatie_vaeru]
+
+[werumu_tatie_v_mehuse]
+[fadeoutbgm time=2000]
+#ウェルム
+[font size=23 edge=0x000000]「っ・・・」[p]
+
+
+#ウェルム
+[font size=23 edge=0x000000]「・・どこで・・・どう・・・歯車が狂った？ランスロット・・・」[p]
+#
+
+#ウェルム
+[font size=23 edge=0x000000]「お前ほどの切れる男が、わしの考えを理解できぬとは・・・本当に残念だ」[p]
+#
+
+
+[chara_hide_all]
+[rans_tatie_touroku]
+[rans_tatie_show]
+#ランスロット
+[font size=23 edge=0x000000]「・・・父上・・・」[p]
+#
+[config_false]
+[werumu_tatie_vaeru]
+#ウェルム
+[font size=23 edge=0x000000]「なぜだ？誰よりも強くなって、わしのために剣をふるうと・・・お前は言っていたではないか！」[p]
+#
+
+
+[rans_tatie_mehuse]
+#ランスロット
+[font size=23 edge=0x000000]「・・・見つけたからです」[p]
+#
+
+
+[werumu_tatie_v_odoroki]
+#ウェルム
+[font size=23 edge=0x000000]「・・・なに？」[p]
+#
+
+[rans_tatie_metoji]
+#ランスロット
+[font size=23 edge=0x000000]「戦う理由を」[p]
+#
+
+[werumu_tatie_v_yokome]
+#ウェルム
+[font size=23 edge=0x000000]「・・理由だと？この国のために命をささげるのが、クレールの騎士というものではないのか」[p]
+#
+
+[rans_tatie_mehuse]
+#ランスロット
+[font size=23 edge=0x000000]「・・・否定はしません。
+[rans_tatie_normal]
+ですが、それ以上に心から守りたいものがある」[p]
+#
+
+#&f.name
+[font size=23 edge=0x000000]（ランスロット・・・）[p]
+#
+
+[werumu_tatie_v_mehuse]
+#ウェルム
+[font size=23 edge=0x000000]「・・・なるほどな」[p]
+#
+
+[werumu_tatie_v_ikari]
+#ウェルム
+[font size=23 edge=0x000000]「・・・まったく、いまいましい小娘だ・・・」[p]
+#
+
+[rans_tatie_mihiraki][w][w][w]
+#ランスロット
+[font size=23 edge=0x000000]「！！」[p]
+#
+
+#ランスロット
+[font size=23 edge=0x000000]「[name]っ！！！！」[p]
+#
+[chara_hide_all time=50]
+#&f.name
+[font size=23 edge=0x000000]「！！！！」[p]
+#
+
+
+[anten]
+[playse storage="kiru_koukaonlabo.ogg"]
+[quake count="3" time="100" hmax="100" vmax="300"]
+[image storage="vaerukengeki.png" layer="2" page="fore" visible="true" name="kengeki1" x="0" y="0"]
+[camera time="200" x="0" y="-50" zoom="5.2"]
+[free name="kengeki1" layer=2]
+[playse storage="kiru_koukaonlabo.ogg"]
+[image storage="vaerukengeki_h.png" layer="2" page="fore" visible="true" name="kengeki2" x="0" y="0"]
+[camera time="50" x="0" y="-50" zoom="5.2"]
+[image storage="aka.jpg" layer="3" page="fore" visible="true" x="0" y="0" name="aka" time="1000"]
+;血飛沫
+[free name="kengeki2" layer=2 time=800]
+[w]
+[free name="aka" layer=3 time=2000]
+[reset_camera]
+[runisi]
+[live2d_rans_touroku]
+[live2d_rans_show_sekkin]
+[rans_exp_mihiraki_aseri]
+[live2d_mod name="rans2" y=-5.0 scale=9.9]
+[live2d_fadein time=1000]
+[stopse]
+#ランスロット
+[font size=23 edge=0x000000]「[name]！！[name]！！」[p]
+#
+
+[playbgm storage="chinkou_ontama.ogg"]
+#&f.name
+[font size=23 edge=0x000000]（あ・・・と・・・すこし・・・で・・・そんな・・・）[p]
+#
+
+
+#&f.name
+[font size=23 edge=0x000000]（ランス・・・ロット・・・私・・・）[p]
+#
+[live2d_fadeout time=3000]
+[image storage="black.png" page=fore visible=true name="kuro" layer="3" x="0" y="0" time=3000]
+
+#ランスロット
+[font size=23 edge=0x000000]「[name]！！」[p]
+#
+
+#&f.name
+[font size=23 edge=0x000000]（伝えたいことが・・・で・・・も・・・どんどん、暗くなって・・・）[p]
+#
+[wait time=3000]
+[anten]
+[free name="kuro" layer=3]
+[bg storage="gyokuza_tasogare.jpg"]
+[rans_exp_mihiraki_aseri]
+[live2d_fadein time=50]
+
+#ランスロット
+[font size=23 edge=0x000000]「[name]！！！！！」[p]
+#
+[rans_mod_idle_no_move_mehuse_2]
+[rans_exp_naki]
+
+
+[fadeoutbgm time=1000]
+[config_false]
+[werumu_tatie_vaeru]
+#ウェルム
+[font size=23 edge=0x000000]「・・ふん。
+[rans_mod_idle_no_move_mehuse]
+[rans_exp_mehuse]
+たいした娘だ。双剣を使いこなすだけでなく、師匠までもをその虜にするとは」[p]
+
+
+[werumu_tatie_v_mehuse]
+#ウェルム
+[font size=23 edge=0x000000]「まあ・・・殺すには惜しかったかもしれんがな・・・寝所のなぐさめくらいにはなったか・・・」[p]
+
+[rans_exp_kunou]
+#ランスロット
+[font size=23 edge=0x000000]「・・・ち・・・ち・・・うえ・・・」[p]
+#
+
+[rans_exp_metoji]
+[rans_mod_idle_no_move_metoji]
+[rans_head_under_y]
+#ランスロット
+[font size=23 edge=0x000000]「っ・・・」[p]
+[rans_mod_idle]
+[rans_head_normal]
+[rans_exp_ikari]
+#
+[w][w]
+;ランス怒り
+[live2d_fadeout time=50]
+
+[werumu_tatie_v_odoroki]
+#ウェルム
+[font size=23 edge=0x000000]「なっ・・・らんす、ろっと・・・！！！」[p]
+#
+[chara_hide_all]
+[battle_gamen_return]
+
+;即死ようのフラグ
+[eval exp="tf.werumu_rans_last=1"]
+[jump storage="scenario_2/mini_game/battle_murtiple.ks" target=*tatakau_zentai_friend]
+;ランスウェルムに必殺技一撃。ウェルム即死
+
+[endif]
+[endif]
+
+
+
+[endmacro]
+
+
+
 
 
 

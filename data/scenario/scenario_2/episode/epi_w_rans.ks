@@ -3805,166 +3805,50 @@
 [rans_exp_bisyo_2]
 [rans_unaduki]
 [w]																								
-[live2d_fadeout time=1000]																									
+[live2d_fadeout time=1000]		
+
+
+*battle_start_w
+[eval exp="f.friend=1"]
+[eval exp="f.monster_group_28=1"]
+[eval exp="f.werumu_battle=1"]
+;[eval exp="f.monster_l_size_3=0"]
+;[eval exp="f.monster_l_size=1"]
+;[eval exp="f.monster_l_size_2=0"]
+;[eval exp="f.rusia_l_size=0"]
+[eval exp="tf.w_attack=1"]
+
+[call storage="scenario_2/live2d_rans_macro.ks"]
+[stopbgm]
+[chara_hide_all]
+[battle_start]
+
+*battle_end_w
+[eval exp="f.monster_group_28=0"]
+[eval exp="f.werumu_battle=0"]
+[eval exp="tf.w_attack=0"]
+[message_settei_ad]
+[live2d_rans_touroku]
+[live2d_fadeout time=50]
+[live2d_rans_show_sekkin]
 ;	バトルのちのやりとりはバトル中で
-[live2d_rans_touroku][live2d_rans_show_sekkin]
+
+
+;;;;
 
 
 
-#ウェルム
-「っ・・・」[p]
-
-
-#ウェルム
-「・・どこで・・・どう・・・歯車が狂った？ランスロット・・・。お前ほどの切れる男が、わしの考えを理解できぬとは・・・本当に残念だ」[p]
-#
-
-
-[live2d_fadein time=1000]
-[rans_mod_idle_no_move_mehuse]
-[rans_exp_mehuse]
-#ランスロット
-「・・・父上・・・」[p]
-#
-
-
-#ウェルム
-「なぜだ？誰よりも強くなって、わしのために剣をふるうと・・・お前は言っていたではないか！」[p]
-#
-
-
-[rans_mod_idle]
-[rans_exp_ketui]
-#ランスロット
-「・・・見つけたからです」[p]
-#
-
-
-#ウェルム
-「・・・なに？」[p]
-#
-
-[rans_mod_idle_no_move_metoji]
-[rans_exp_metoji]
-#ランスロット
-「戦う理由を」[p]
-#
-
-#ウェルム
-「・・理由だと？この国のために命をささげるのが、クレールの騎士というものではないのか」[p]
-#
-
-[rans_mod_idle_no_move_mehuse]
-[rans_exp_mehuse]
-#ランスロット
-「・・・否定はしません。ですが、それ以上に心から守りたいものがある」[p]
-#
-
-#&f.name
-（ランスロット・・・）[p]
-#
-
-#ウェルム
-「・・・なるほどな」[p]
-#
-
-#ウェルム
-「・・・まったく、いまいましい小娘だ・・・」[p]
-#
-
-[rans_mod_idle_no_move_mihiraki]
-[rans_exp_mihiraki][w][w][w]
-#ランスロット
-「！！」[p]
-#
-
-#ランスロット
-「[name]っ！！！！」[p]
-#
-[live2d_fadeout time=50]
-;血飛沫
-#&f.name
-「！！！！」[p]
-#
-
-[runisi]
-[rans_exp_mihiraki_aseri]
-[live2d_mod name="rans2" y=-5.0 scale=9.9]
-[live2d_fadein time=1000]
-[stopse]
-#ランスロット
-「[name]！！[name]！！」[p]
-#
-
-#&f.name
-（あ・・・と・・・すこし・・・で・・・そんな・・・）[p]
-#
-
-
-#&f.name
-（ランス・・・ロット・・・私・・・）[p]
-#
-[live2d_fadeout time=3000]
-[image storage="black.png" page=fore visible=true name="kuro" layer="3" x="0" y="0" time=3000]
-
-#ランスロット
-「[name]！！」[p]
-#
-
-#&f.name
-（伝えたいことが・・・で・・・も・・・どんどん、暗くなって・・・）[p]
-#
-[wait time=3000]
-[anten]
+*rans_battle_end
+;バトル終了 
 [free name="kuro" layer=3]
-[bg storage="gyokuza_tasogare.jpg"]
-[rans_exp_mihiraki_aseri]
-[live2d_fadein time=50]
+[bg storage="gyokuza_tasogare.jpg" time=50]
 
-#ランスロット
-「[name]！！！！！」[p]
-#
-[rans_mod_idle_no_move_mehuse_2]
-[rans_exp_naki]
-
-
-#ウェルム
-「・・ふん。
-[rans_mod_idle_no_move_mehuse]
-[rans_exp_mehuse]
-たいした娘だ。双剣を使いこなすだけでなく、師匠までもをその虜にするとは」[p]
-
-
-#ウェルム
-「まあ・・・殺すには惜しかったかもしれんがな・・・寝所のなぐさめくらいにはなったか・・・」[p]
-
-[rans_exp_kunou]
-#ランスロット
-「・・・ち・・・ち・・・うえ・・・」[p]
-#
-
-[rans_exp_metoji]
-[rans_mod_idle_no_move_metoji]
-[rans_head_under_y]
-#ランスロット
-「っ・・・」[p]
-[rans_mod_idle]
-[rans_head_normal]
-[rans_exp_ikari]
-#
-[w][w]
-;ランス怒り
+[live2d_rans_touroku]
 [live2d_fadeout time=50]
+[live2d_rans_show_sekkin]
 
-#ウェルム
-「なっ・・・らんす、ろっと・・・！！！」[p]
-#
-;ランスウェルムに必殺技一撃。ウェルム即死
-
-;バトル終了
-[bg storage="gyokuza_tasogare.ogg" time=50]
-
-
+[werumu_v_tatie_touroku]
+[werumu_tatie_last]
 #ウェルム	
 「ぐっ・・・ぐああああああああ！！」[p]
 #																								
@@ -3972,6 +3856,7 @@
 #&f.name
 （・・・ランスロット・・・）[p]
 #
+
 
 
 [rans_exp_naki]
@@ -4010,12 +3895,26 @@
 [reset_camera]
 ;イレインの部屋
 
+
+[if exp="f.rans_last_ok!=1"]
+[free name="kuro" layer=3]
+[live2d_delete_all][live2d_off][message_kakusu_ad]
+[button_clear]
+[wait time=2000]
+[message_kakusu_ad]
+[bg storage="siro.jpg"]
+[jump target=*rans_last_end]
+[endif]
+
+
+
+
 [bg storage="irainheya_tasogare.jpg"]
 [free name="kuro" layer=3]
 #&f.name
 （あれ・・・どこだろ・・・ここ・・・）[p]
 #
-
+[config_true]
 [kra_tatie_touroku]
 [kra_tatie_show_rans_left]
 #クライスト
@@ -4708,13 +4607,17 @@
 [wait time=3000]
 [free name="moji" layer=3 time=1000]
 
-
+*rans_last_end
 
 
 [ptext layer="3" page="fore" text="End" x="380" y="250" size="25" face="hannari" color="black" bold="" edge="" shadow="" name="moji" width="" align="" time="1000"]
 [wait time=3000]
 [free name="moji" layer=3 time=1000]
 
+
+[iscript]
+location.reload()
+[endscript]
 [s]
 *epilogue
 [fadeoutbgm time=3000]

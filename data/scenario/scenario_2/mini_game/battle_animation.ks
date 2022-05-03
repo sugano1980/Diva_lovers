@@ -23,8 +23,17 @@
 [anim name="nemuri_irain" top="-=20" time=100]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[anim name="skill_irain" top="-=20" time=100]
+[endif]
+
+
 [if exp="tf.kra_baria>0"]
 [anim name="kra_baria_b" top="-=20" time=100]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero" top="-=20" time=100]
 [endif]
 
 
@@ -54,9 +63,17 @@
 [if exp="tf.irain_sp[2]==1"]
 [anim name="nemuri_irain" top="+=20" time=100]
 [endif]
+[if exp="tf.irain_sp[3]==1"]
+[anim name="skill_irain" top="+=20" time=100]
+[endif]
 [if exp="tf.kra_baria>0"]
 [anim name="kra_baria_b" top="+=20" time=100]
 [endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero" top="+=20" time=100]
+[endif]
+
 [w][w]
 
 [free layer=3 name="irain_hp"]
@@ -192,6 +209,13 @@
 [anim name="nemuri_friend" top="-=20" time=100]
 [endif]
 
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" top="-=20" time=100]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero_f" top="-=20" time=100]
+[endif]
 
 
 
@@ -219,6 +243,15 @@
 [if exp="tf.friend_nemuri==1"]
 [anim name="nemuri_friend" top="+=20" time=100]
 [endif]
+
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" top="+=20" time=100]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero_f" top="+=20" time=100]
+[endif]
+
 [free layer=3 name="friend_hp"]
 [free layer=3 name="friend_attack"]
 [free layer=3 name="friend_guard"]
@@ -274,6 +307,12 @@
 [anim name="nemuri_friend" left="-=20" time=100]
 [endif]
 
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" left="-=20" time=100]
+[anim name="skill_friend" left="+=40" time=100]
+[anim name="skill_friend" left="-=20" time=100]
+[endif]
+
 [elsif exp="tf.damage_w<tf.monster_damage_f"]
 
 [anim name="status_friend" left="-=40" time=100]
@@ -316,6 +355,12 @@
 [anim name="nemuri_friend" left="-=40" time=100]
 [endif]
 
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" left="-=40" time=100]
+[anim name="skill_friend" left="+=80" time=100]
+[anim name="skill_friend" left="-=40" time=100]
+[endif]
+
 [endif]
 
 
@@ -345,8 +390,16 @@
 [anim name="nemuri_irain" left="-=600" time=200]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[anim name="skill_irain" left="-=600" time=200]
+[endif]
+
 [if exp="tf.kra_baria>0"]
 [anim name="kra_baria_b" left="-=600" time=100]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero" left="-=600" time=100]
 [endif]
 
 
@@ -370,6 +423,14 @@
 
 [if exp="tf.friend_nemuri==1"]
 [anim name="nemuri_friend" left="+=600" time=200]
+[endif]
+
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" left="+=600" time=200]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero_f" left="+=600" time=100]
 [endif]
 
 [wait time="200"]
@@ -398,8 +459,16 @@
 [anim name="nemuri_irain" left="+=600" time=200]
 [endif]
 
+[if exp="tf.irain_sp[3]==1"]
+[anim name="skill_irain" left="+=600" time=200]
+[endif]
+
 [if exp="tf.kra_baria>0"]
 [anim name="kra_baria_b" left="+=600" time=100]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero" left="+=600" time=100]
 [endif]
 
 
@@ -419,6 +488,14 @@
 
 [if exp="tf.friend_nemuri==1"]
 [anim name="nemuri_friend" left="-=600" time=200]
+[endif]
+
+[if exp="tf.friend_skill_no==1"]
+[anim name="skill_friend" left="-=600" time=200]
+[endif]
+
+[if exp="tf.guard_zero>0"]
+[anim name="guard_icon_zero_f" left="-=600" time=100]
 [endif]
 
 [wait time="200"]
@@ -5853,9 +5930,7 @@ tf.many = Math.floor( Math.random() * 3) + 1
 [playse storage="battle_se/iainuki1_koukaonlabo.ogg"]
 [w][w]
 
-[if exp="f.guard_zero=1"]
-[eval exp="f.guard_zero=0"]
-[endif]
+
 
 [playse storage="battle_se/rans_sword_0.ogg"]
 [wait time=100]
@@ -5916,11 +5991,683 @@ tf.many = Math.floor( Math.random() * 3) + 1
 [elsif exp="tf.many==1&&tf.guard_zero==1"]
 ガードゼロの効果が消えた！[r][a]
 [eval exp="tf.guard_zero=0"]
+[free name="guard_icon_zero_f" layer=2]
+[free name="guard_icon_zero" layer=2]
 [endif]
 [endmacro]
 
 
 
+
+;ヴァリアス回復-------------------------------------------
+[macro name="varius_heal"]
+;回復
+[eval exp="tf.monster_hp_1 = tf.monster_hp_1+5000"]
+[playse storage="battle_se/charamel_koukaonlabo.ogg"]
+;回復アニメーション
+[if exp="f.monster_igyou==1"]
+[eval exp="tf.damage_x=tf.x/2"]
+[eval exp="tf.damage_y=tf.y/2"]
+[elsif exp="f.rusia_battle==1"]
+[eval exp="tf.damage_x=tf.x/2"]
+[eval exp="tf.damage_y=tf.y/2+200"]
+[else]
+[eval exp="tf.damage_x=tf.hit_x+30"]
+[eval exp="tf.damage_y=tf.hit_y+10"]
+[endif]
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_0.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_1.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_2.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_3.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_4.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_5.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_6.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_7.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_8.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+[image layer=3 page=fore visible=true name="anime_charamel" storage="battle_animation/kra_magic/kra_magic_9.png" x=&tf.damage_x y=&tf.damage_y]
+[free layer=3 name="anime_charamel" time=100]
+
+
+;回復数値アニメ
+[eval exp="tf.plus = tf.damage_x-20"]
+[ptext layer=3 page=fore visible=true name="damage" text="+" color=lightgreen size=30 x=&tf.plus y=&tf.damage_y]
+[ptext layer=3 page=fore visible=true name="damage" text="5000" color=lightgreen size=30 x=&tf.damage_x y=&tf.damage_y]
+[loadcss file="./data/scenario/mini_game/item_css/damage.css"]
+[anim name="damage" top="-=100" time=100]
+[anim name="damage" top="+=80" time=80]
+[anim name="damage" top="-=20" time=100]
+[anim name="damage" top="+=20" time=70]
+[anim name="damage" top="-=20" time=50]
+[wait time=400]
+[free layer=3 name="damage"]
+[endmacro]
+
+
+;アイテム、応援効果無効-------------------------------------------------------------------------------------------
+[macro name="kouka_mukou"]
+[eval exp="tf.guard_zero=0"]
+[eval exp="tf.skill_only=0"]
+[eval exp="tf.hawk_eye=0"]
+[eval exp="tf.height=600"]
+[eval exp="tf.width=800"]
+
+
+;アニメーション
+[playse storage="kouka_mukou.ogg"]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_0.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_1.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_2.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_3.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_4.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_5.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_6.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_7.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" height="&tf.height" width="&tf.width" storage="battle_animation/varius/kouka_nasi_8.png" x=0 y=0]
+[free layer=3 name="anime_amaishizuku" time=200]
+
+
+[if exp="f.irain_hp_m>f.irain_hp_c"]
+[eval exp="f.irain_hp_m=f.irain_hp_c"]
+[endif]
+
+[if exp="f.irain_tec>f.irain_tec_c"]
+[eval exp="f.irain_tec=f.irain_tec_c"]
+[endif]
+
+[eval exp="f.irain_brain=f.irain_brain_c"]
+[eval exp="f.irain_charm=f.irain_charm_c"]
+[free layer=2 name="irain_hp"]
+[free layer=2 name="irain_tec"]
+[free layer=2 name="irain_brain"]
+[free layer=2 name="irain_charm"]
+[irain_hp_kousin]
+
+[if exp="f.friend>=1&&tf.friend_death!=1"]
+
+[if exp="tf.friend_hp_m>tf.friend_hp_c"]
+[eval exp="tf.friend_hp_m=tf.friend_hp_c"]
+[endif]
+
+[if exp="tf.friend_attack>tf.friend_attack_c"]
+[eval exp="tf.friend_attack=tf.friend_attack_c"]
+[endif]
+
+[eval exp="tf.friend_guard=tf.friend_guard_c"]
+[free layer=2 name="friend_hp"]
+[free layer=2 name="friend_attack"]
+[free layer=2 name="friend_guard"]
+[friend_hp_kousin]
+[endif]
+[free name="guard_icon_zero" layer=2]
+[free name="guard_icon_zero_f" layer=2]
+;メッセージ
+アイテム、応援による補助効果が打ち消された！[r][a]
+[endmacro]
+
+
+
+;全体魔法^^^^^^^^^^^^^^^^^^^^^^^----------------------------------------------------------------------------------------
+[macro name="varius_mahou"]
+
+;アニメーション
+[image layer=3 page=fore storage="siro.png" name="siro"]
+[free name="siro" layer=3]
+[image layer=3 page=fore storage="siro.png" name="siro"]
+[free name="siro" layer=3 time=500]
+[playse storage="klaistkougeki_koukaonlabo.ogg"]
+
+;[playse storage="battle_se/kra_skill_3_1.ogg"]
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_0.png" x=0 y=0 time=35]
+[free layer=3 name="anime_kra_skill" time=30]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_1.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_2.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_3.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_4.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_5.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+;[playse storage="battle_se/kra_skill_3_1.ogg"]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_6.png" x=0 y=0 time=55]
+[wait time=300]
+[free layer=3 name="anime_kra_skill" ]
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_7.png" x=0 y=0 time=55]
+[wait time=300]
+
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_8.png" x=0 y=0 time=55]
+[wait time=300]
+
+[playse storage="dogon_koukaonlabo.ogg"]
+[image layer=3 page=fore storage="siro.jpg" name="siro" time=1000]
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_9.png" x=0 y=0 time=55]
+[wait time=300]
+
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_10.png" x=0 y=0 time=55]
+[wait time=300]
+
+
+[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/varius/varius_skill_11.png" x=0 y=0 time=55]
+[wait time=300]
+
+
+
+;[image layer=3 page=fore visible=true name="anime_kra_skill" storage="battle_animation/kra/kra_skill_0_10.png" x=0 y=-200 time=55]
+[wait time=3500]
+[free name="anime_kra_skill" layer=1]
+[free layer=3 name="anime_kra_skill" ]
+[free name="siro" layer=3]
+
+[endmacro]
+
+
+
+
+;能力値ダウン--------------------
+[macro name="attack_down_v"]
+
+[eval exp="f.irain_tec_f=f.irain_tec"]
+[eval exp="f.friend_attack_f=f.friend_attack"]
+
+[eval exp="tf.attack_down=1"]
+[eval exp="tf.attack_doku=1"]
+[eval exp="tf.attack_mahi=1"]
+
+
+;アニメーション
+[playse storage="battle_se/werumu_mahou.ogg"]
+[image layer=3 page=fore visible=true name="anime_werumu_skill" storage=battle_animation/werumu/werumu_skill_0.png x=0 y=0 time=1000]
+[wait time=100]
+[wait time=300]
+[free name="anime_werumu_skill" layer=3]
+;攻撃力ダウンイレイン
+[eval exp="tf.down=f.irain_tec-f.irain_tec/2"]
+[iscript]
+f.irain_tec = Math.floor(tf.down)
+[endscript]
+[eval exp="tf.irain_sp_y=tf.irain_face_y-20"]
+;モンスターで特殊攻撃に入力があれば追加
+[if exp="tf.attack_down==1&&tf.irain_sp[0]!=1&&tf.guard_success!=1"]
+;ステータス表示を変更
+[image layer=3 page=fore visible="true" storage="battle_animation/tec_down.png" name="down_irain" x=&tf.irain_face_x y=&tf.irain_sp_y]
+[image layer=3 page=fore visible="true" storage="battle_animation/tec_down_y.png" name="down_irain_2" x=&tf.irain_face_x y=&tf.irain_sp_y]
+[anim name="down_irain_2" top="+=30"]
+[w][w][w]
+[free name="down_irain_2" layer=3]
+[free name="down_irain" layer=3]
+
+
+[free layer=2 name="irain_hp"]
+[free layer=2 name="irain_tec"]
+
+;再表示
+[irain_hp_kousin]
+
+[playse storage="battle_se/werumu_mahou.ogg"]
+[name]の攻撃力が下がった！[r][a]
+[endif]
+
+
+
+;-----------------
+;攻撃ダウン仲間
+
+[eval exp="tf.friend_d_attack=tf.friend_attack-tf.friend_attack/2"]
+
+[iscript]
+tf.friend_attack =  Math.floor(tf.friend_d_attack)
+[endscript]
+
+
+[eval exp="tf.friend_sp_y=tf.friend_face_y-20"]
+;モンスターで特殊攻撃に入力があれば追加,仲間
+[if exp="tf.attack_down==1&&tf.friend_death!=1&&tf.friend_doku!=1&&tf.guard_success!=1"]
+;ステータス表示を変更
+[image layer=3 page=fore visible="true" storage="battle_animation/tec_down.png" name="down_friend" x=&tf.friend_face_x y=&tf.friend_sp_y]
+[image layer=3 page=fore visible="true" storage="battle_animation/tec_down_y.png" name="down_friend_2" x=&tf.friend_face_x y=&tf.friend_sp_y]
+[anim name="down_friend_2" top="+=30"]
+[w][w][w]
+[free name="down_friend_2" layer=3]
+[free name="down_friend" layer=3]
+
+[if exp="f.friend>=1&&tf.friend_death!=1"]
+[free layer=2 name="friend_hp"]
+[free layer=2 name="friend_attack"]
+[free layer=2 name="friend_guard"]
+
+[friend_hp_kousin]
+[endif]
+
+[playse storage="battle_se/werumu_mahou.ogg"]
+[emb exp="tf.friend_name"]の攻撃力が下がった！[r][a]
+[endif]
+[eval exp="tf.attack_down=0"]
+[endmacro]
+
+;--------------
+
+
+[macro name="skill_huuji"]
+;スキル封じ
+;アニメーション
+[eval exp="tf.anime_item_x=tf.irain_face_x-50"]
+[eval exp="tf.anime_item_y=tf.irain_face_y-50"]
+
+[playse storage="suitoru_koukaonlabo.ogg"]
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_0.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/amaishizuku/varius/skill_no_1.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_2.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_3.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_4.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_5.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_6.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_7.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_8.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+;仲間の場合
+
+[eval exp="tf.anime_amaishizuku_friend_x=tf.friend_face_x-50]
+[eval exp="tf.anime_amaishizuku_friend_y=tf.friend_face_y-50]
+
+
+[if exp="tf.friend_death!=1&&tf.friend_battle==1"]
+
+[playse storage="suitoru_koukaonlabo.ogg"]
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_0.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_1.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_2.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_3.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_4.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_5.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_6.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_7.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_8.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/skill_no_9.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=150]
+
+[endif]
+
+
+
+;イレイン
+[if exp="tf.irain_sp[3]!=1&&tf.guard_success!=1"]
+[eval exp="tf.irain_sp[3]=1"]
+[eval exp="tf.irain_sp_y=tf.irain_face_y-20"]
+[eval exp="tf.irain_skill_x=tf.irain_face_x+100"]
+;ステータス表示を変更
+[image layer=3 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_irain" x=&tf.irain_skill_x y=&tf.irain_sp_y]
+[name]は技がつかえなくなった！[r][a]
+;解除確率
+[eval exp="tf.kakuritu=3"]
+;スキルなしフラグ
+[eval exp="tf.skill_impossble=1"]
+;[live2d_motion name="irain" mtn="Battle_poison" no=0]
+;[live2d_mod name="irain" idle="Battle_poison" no=0]
+[endif]
+
+
+;仲間
+[eval exp="tf.friend_sp_y=tf.friend_face_y-20"]
+[eval exp="tf.friend_skill_x=tf.friend_face_x+0"]
+
+;モンスターで特殊攻撃に入力があれば追加,仲間
+[if exp="tf.friend_death!=1&&tf.friend_skill!=1&&tf.guard_success!=1"]
+[eval exp="tf.friend_skill_no=1"]
+;ステータス表示を変更
+[image layer=3 page=fore visible="true" storage="battle_animation/skill_nasi.gif" name="skill_friend" x=&tf.friend_skill_x y=&tf.friend_sp_y]
+[emb exp="tf.friend_name"]は技がつかえなくなった！[r][a]
+[eval exp="tf.skill_f_impossble=1"]
+[endif]
+[endmacro]
+
+
+
+
+
+[macro name="varius_sword"]
+[if exp="tf.attack_random==1"]
+[eval exp="tf.attack_x=tf.friend_face_x-150"]
+[eval exp="tf.attack_y=tf.friend_face_y-200"]
+[elsif exp="tf.attack_random!=1"]
+[eval exp="tf.attack_x=tf.irain_face_x-100"]
+[eval exp="tf.attack_y=tf.irain_face_y-200"]
+[endif]
+
+[playse storage="battle_se/kra_sword_3.ogg"]
+[image layer=3 page=fore visible=true name="anime_rusia_skill" storage=battle_animation/varius/varius_sword.png x=&tf.attack_x y=&tf.attack_y]
+[wait time=300]
+[free layer=3 name="anime_rusia_skill"]
+[playse storage="battle_se/kra_sword_2.ogg"]
+[endmacro]
+
+
+[macro name="varius_hp_1"]
+;HP1
+[eval exp="tf.v_hp1=1"]
+
+[eval exp="tf.anime_item_x=tf.irain_face_x-50"]
+[eval exp="tf.anime_item_y=tf.irain_face_y-50"]
+
+;アニメーション
+
+[playse storage="dark_attack.ogg"]
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_0.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_1.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_2.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_3.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_4.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[w]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_5.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_6.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_7.png" x=&tf.anime_item_x y=&tf.anime_item_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+
+
+
+;仲間の場合
+
+[eval exp="tf.anime_amaishizuku_friend_x=tf.friend_face_x-50]
+[eval exp="tf.anime_amaishizuku_friend_y=tf.friend_face_y-50]
+
+
+[if exp="tf.friend_death!=1&&tf.friend_battle==1"]
+
+[playse storage="dark_attack.ogg"]
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_0.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_1.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_2.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_3.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_4.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[w]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_5.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_6.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+[image layer=3 page=fore visible=true name="anime_amaishizuku" storage="battle_animation/varius/hp1_7.png" x=&tf.anime_amaishizuku_friend_x y=&tf.anime_amaishizuku_friend_y]
+[free layer=3 name="anime_amaishizuku" time=180]
+
+
+
+[endif]
+
+[endmacro]
+
+
+
+[macro name="makara_mahou_anime"]
+
+[eval exp="tf.mahou_anime=[]"]
+
+[iscript]
+tf.mahou_anime=[
+"battle_animation/makara/aqua_8.png",
+"battle_animation/makara/aqua_7.png",
+"battle_animation/makara/aqua_6.png",
+"battle_animation/makara/aqua_5.png",
+"battle_animation/makara/aqua_4.png",
+"battle_animation/makara/aqua_3.png",
+"battle_animation/makara/aqua_2.png",
+"battle_animation/makara/aqua_1.png",
+"battle_animation/makara/aqua_0.png",
+];
+
+[endscript]
+[eval exp="tf.mahou_kaisu=8"]
+
+[playse storage="makara_aqua.ogg"]
+*anime_return
+[image storage=&tf.mahou_anime[tf.mahou_kaisu] layer="3" page="fore" visible="true" x="0" y="280" name="mahou_anime"]
+[free name="mahou_anime"  layer=3 time=180]
+
+[if exp="tf.mahou_kaisu>0"]
+[eval exp="tf.mahou_kaisu = tf.mahou_kaisu-1"]
+[jump target=*anime_return]
+[endif]
+[endmacro]
+
+
+
+[macro name="makara_attack"]
+[anim name="monster1" top="-=400" time=300]
+[wait time=200]
+;[anim name=monster1 top="-=700" width=200% time=500]
+[anim name="monster1" top="+=800" width=200% time=500]
+[endmacro]
+
+[macro name="makara_attack_end"]
+[anim name=monster1 left="+=800" top="+=800" width=30% time=300]
+[endmacro]
+
+[macro name="makara_otakebi"]
+
+[playse storage="makara_otakebi.ogg"]
+[eval exp="tf.mahou_anime=[]"]
+
+[iscript]
+tf.mahou_anime=[
+"battle_animation/makara/makara_otakebi_7.png",
+"battle_animation/makara/makara_otakebi_6.png",
+"battle_animation/makara/makara_otakebi_5.png",
+"battle_animation/makara/makara_otakebi_4.png",
+"battle_animation/makara/makara_otakebi_3.png",
+"battle_animation/makara/makara_otakebi_2.png",
+"battle_animation/makara/makara_otakebi_1.png",
+"battle_animation/makara/makara_otakebi_0.png",
+];
+
+[endscript]
+[eval exp="tf.mahou_kaisu=7"]
+
+[playse storage="makara_otakebi.ogg"]
+*anime_return_o
+[image storage="&tf.mahou_anime[tf.mahou_kaisu]" layer="3" page="fore" visible="true" x="0" y="310" name="mahou_anime"]
+[free name="mahou_anime" layer=3 time=350]
+
+[if exp="tf.mahou_kaisu>0"]
+[eval exp="tf.mahou_kaisu = tf.mahou_kaisu-1"]
+[jump target=*anime_return_o]
+[endif]
+
+;イレインまひ
+[if exp="tf.irain_sp[1]!=1&&tf.guard_success!=1"]
+[eval exp="tf.irain_sp[1]=1"]
+[eval exp="tf.irain_sp_y=tf.irain_face_y-20"]
+[eval exp="tf.irain_mahi_x=tf.irain_face_x+100"]
+;ステータス表示を変更
+[playse storage="battle_se/mahi_onjin.ogg"]
+[image layer=3 page=fore visible="true" storage="mahi.gif" name="mahi_irain" x=&tf.irain_mahi_x y=&tf.irain_sp_y]
+[name]はまひした！[r][a]
+;麻痺解除確率
+[eval exp="tf.kakuritu=2"]
+;[live2d_motion name="irain" mtn="Battle_mahi" no=0]
+;[live2d_mod name="irain" idle="Battle_mahi" no=0]
+
+[endif]
+
+
+
+;仲間どく
+[eval exp="tf.friend_sp_y=tf.friend_face_y-20"]
+
+;モンスターで特殊攻撃に入力があれば追加,仲間
+;仲間まひ
+[if exp="tf.friend_death!=1&&tf.friend_mahi!=1&&tf.guard_success!=1"]
+[eval exp="tf.friend_mahi=1"]
+[playse storage="battle_se/mahi_onjin.ogg"]
+[emb exp="tf.friend_name"]はまひした！[r][a]
+;麻痺解除確率
+[eval exp="tf.kakuritu=2"]
+[eval exp="tf.friend_mahi_x=tf.friend_face_x+100"]
+
+;ステータス表示を変更
+[image layer=3 page=fore visible="true" storage="mahi.gif" name="mahi_friend" x=&tf.friend_mahi_x y=&tf.friend_sp_y]
+[endif]
+
+
+[endmacro]
 
 
 

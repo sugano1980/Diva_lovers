@@ -17,6 +17,7 @@
 
 
 [eval exp="tf.guard_zero=1"]
+
 [clearfix_item]
 [eval exp="f.battle_item_stock[5]=f.battle_item_stock[5]-1"]
 

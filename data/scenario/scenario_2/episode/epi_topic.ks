@@ -33,7 +33,8 @@
 [jump storage="scenario_2/episode/epi_flag_check.ks" target=*last_scenario_2]
 
 [elsif exp="f.episode_flag==11&&f.rans_flag==1"]
-*epi_rans[anten][message_kakusu_ad][message_settei]
+*epi_rans
+[anten][message_kakusu_ad][message_settei]
 [cm][refresh_hanyou]
 [showmenubutton]
 [r][r][r][r][r]ランスロットルート　気まずい再会[l]

@@ -853,7 +853,7 @@ var monster_no_34 =new Map([
 
 ["id",34],
 ["name",'ウェルム'],
-["hp",500000],
+["hp",50000],
 ["graphic",'monster/mujintou_mon.png'],
 ["graphic_damage",'monster/ikareruinu_damage.png'],
 ["damage",2000],
@@ -881,9 +881,36 @@ var monster_no_35 =new Map([
 ["id",35],
 ["name",'ヴァリアス'],
 ["hp",1500000],
-["graphic",'monster/mujintou_mon.png'],
-["graphic_damage",'monster/ikareruinu_damage.png'],
+["graphic",'monster/varias.png'],
+["graphic_damage",'monster/varias_damage.png'],
 ["damage",4000],
+["doku",0],
+["mahi",0],
+["nemuri",0],
+["honoo",0],
+["koori",0],
+["ikaduti",0],
+["nigeru",0],
+["exp_tec",0],
+["exp_brain",0],
+["exp_charm",0],
+["exp",0],
+["sp",10],
+["attack",1]
+
+]);
+
+
+//マカラ
+
+var monster_no_36 =new Map([	
+
+["id",36],
+["name",'マカラ'],
+["hp",500000],
+["graphic",'monster/makara.png'],
+["graphic_damage",'monster/makara_damage.png'],
+["damage",2000],
 ["doku",0],
 ["mahi",0],
 ["nemuri",0],
@@ -943,6 +970,7 @@ monster_no_32,
 monster_no_33,
 monster_no_34,
 monster_no_35,
+monster_no_36,
 ];
 this.kag.stat.f["monster_para"]=[];
 
@@ -2069,6 +2097,24 @@ tf.monster1=33;
 //f.monster_l_size=1;
 tf.monster_number=1;
 tf.monster1=34;
+
+[endscript]
+
+[elsif exp="f.monster_group_29==1"]
+;ヴァリアス
+[iscript]
+//f.monster_l_size=1;
+tf.monster_number=1;
+tf.monster1=35;
+
+[endscript]
+
+[elsif exp="f.monster_group_30==1"]
+;マカラ
+[iscript]
+//f.monster_l_size=1;
+tf.monster_number=1;
+tf.monster1=36;
 
 [endscript]
 
